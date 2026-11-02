@@ -1,0 +1,87 @@
+
+Running 15 tests using 1 worker
+
+  ✓   1 [setup] › tests/auth.setup.ts:10:6 › log in as faculty and save the session (4.6s)
+  ✓   2 [chromium] › tests/dashboard.spec.ts:103:7 › Dashboard › DSH-01: the dashboard loads with the four cards and their numbers (7.0s)
+  ✓   3 [chromium] › tests/dashboard.spec.ts:120:7 › Dashboard › DSH-02: the My Courses card opens the Courses page (7.1s)
+  ✓   4 [chromium] › tests/dashboard.spec.ts:132:7 › Dashboard › DSH-03: the other three cards are not clickable (7.3s)
+  ✓   5 [chromium] › tests/dashboard.spec.ts:151:7 › Dashboard › DSH-04: the My Courses number matches the Courses page (7.5s)
+  ✓   6 [chromium] › tests/dashboard.spec.ts:197:9 › Dashboard › DSH-08a: the 'Courses' header link opens its page and is highlighted (8.4s)
+  ✓   7 [chromium] › tests/dashboard.spec.ts:197:9 › Dashboard › DSH-08b: the 'Review Questions' header link opens its page and is highlighted (8.5s)
+  ✓   8 [chromium] › tests/dashboard.spec.ts:197:9 › Dashboard › DSH-08c: the 'OSCE' header link opens its page and is highlighted (9.6s)
+  ✓   9 [chromium] › tests/dashboard.spec.ts:212:7 › Dashboard › DSH-08d: the 'Dashboard' header link returns to the dashboard from another page (7.6s)
+  ✓  10 [chromium] › tests/dashboard.spec.ts:223:7 › Dashboard › DSH-09: My Banks shows Private Bank and Departmental Bank and both open (15.9s)
+  ✓  11 [chromium] › tests/dashboard.spec.ts:287:7 › Dashboard › DSH-10: the Quick Tour walks through four steps and can be closed (9.5s)
+  ✓  12 [chromium] › tests/dashboard.spec.ts:319:7 › Dashboard › DSH-11: the profile menu opens and closes, and the theme is kept after a refresh (11.0s)
+CLEANUP | remove the contest: skipped (expect(locator).toBeVisible() failed)
+CLEANUP | delete the question in the course: skipped (expect(locator).toBeVisible() failed)
+CLEANUP | delete the course: skipped (expect(locator).toBeVisible() failed)
+CLEANUP | delete the question from the Private Bank: skipped (expect(locator).toBeVisible() failed)
+DASHBOARD | baseline: {"courses":23,"owned":23,"managed":0,"shared":0,"mcqs":499,"helpRequests":1,"activeContests":0}
+  ✓  13 [chromium] › tests/dashboard.spec.ts:523:7 › Dashboard - data tests (create, check, delete) › DSH-06: adding a course raises the My Courses number by 1 (12.2s)
+  ✓  14 [chromium] › tests/dashboard.spec.ts:545:7 › Dashboard - data tests (create, check, delete) › DSH-05: adding a question raises the Total MCQs number by 1 (23.6s)
+CLEANUP | remove the contest: done
+CLEANUP | delete the question in the course: done
+CLEANUP | delete the course: done
+CLEANUP | delete the question from the Private Bank: done
+DASHBOARD | after clean-up: {"courses":23,"owned":23,"managed":0,"shared":0,"mcqs":499,"helpRequests":1,"activeContests":0}
+  ✘  15 [chromium] › tests/dashboard.spec.ts:595:7 › Dashboard - data tests (create, check, delete) › DSH-07: a LIVE contest raises the Active Contests number by 1 (3.1m)
+
+
+  1) [chromium] › tests/dashboard.spec.ts:595:7 › Dashboard - data tests (create, check, delete) › DSH-07: a LIVE contest raises the Active Contests number by 1 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+    Call Log:
+    - Timeout 30000ms exceeded while waiting on the predicate
+
+      661 |           timeout: 30_000,
+      662 |         })
+    > 663 |         .toBe(before.activeContests + 1);
+          |          ^
+      664 |     } finally {
+      665 |       await saveEvidence(page, "DSH-07-dashboard-after-live");
+      666 |     }
+        at /home/haider/Documents/risetech/peered-tests/tests/dashboard.spec.ts:663:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/dashboard-Dashboard---data-4ccc7-Active-Contests-number-by-1-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/dashboard-Dashboard---data-4ccc7-Active-Contests-number-by-1-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/dashboard-Dashboard---data-4ccc7-Active-Contests-number-by-1-chromium/error-context.md
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/dashboard-Dashboard---data-4ccc7-Active-Contests-number-by-1-chromium/test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/dashboard-Dashboard---data-4ccc7-Active-Contests-number-by-1-chromium/test-failed-3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/dashboard-Dashboard---data-4ccc7-Active-Contests-number-by-1-chromium/error-context.md
+
+    attachment #7: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/dashboard-Dashboard---data-4ccc7-Active-Contests-number-by-1-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/dashboard-Dashboard---data-4ccc7-Active-Contests-number-by-1-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Slow test file: [chromium] › tests/dashboard.spec.ts (5.4m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  1 failed
+    [chromium] › tests/dashboard.spec.ts:595:7 › Dashboard - data tests (create, check, delete) › DSH-07: a LIVE contest raises the Active Contests number by 1 
+  14 passed (6.5m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

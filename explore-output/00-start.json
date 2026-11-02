@@ -1,0 +1,41 @@
+{
+  "url": "https://peered.risetech.ai/faculty/dashboard",
+  "title": "PeerEd",
+  "headings": [],
+  "dialogOpen": true,
+  "links": [
+    {
+      "text": "Dashboard",
+      "href": "/faculty/dashboard"
+    },
+    {
+      "text": "Courses",
+      "href": "/faculty/courses"
+    },
+    {
+      "text": "Review Questions",
+      "href": "/faculty/review-questions"
+    },
+    {
+      "text": "OSCE",
+      "href": "/faculty/osce"
+    },
+    {
+      "text": "Private BankManage private question bank",
+      "href": "/faculty/private-bank"
+    },
+    {
+      "text": "Departmental BankAccess departmental bank",
+      "href": "/faculty/departmental-bank"
+    }
+  ],
+  "buttons": [
+    "",
+    "Dr. Asad",
+    "Quick Tour",
+    "",
+    "Skip",
+    "Next"
+  ],
+  "inputs": []
+}

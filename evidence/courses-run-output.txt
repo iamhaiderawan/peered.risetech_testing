@@ -1,0 +1,239 @@
+
+Running 27 tests using 1 worker
+
+  ✓   1 [setup] › tests/auth.setup.ts:10:6 › log in as faculty and save the session (4.2s)
+  ✓   2 [chromium] › tests/courses.spec.ts:377:7 › Courses - list (read only) › CRS-01: the Courses page loads, cards show the role badge and the counts (6.5s)
+  ✓   3 [chromium] › tests/courses.spec.ts:407:7 › Courses - list (read only) › CRS-02: the grid and list views show the same courses (8.8s)
+  ✓   4 [chromium] › tests/courses.spec.ts:428:7 › Courses - list (read only) › CRS-03: filter by role shows only the matching courses (15.9s)
+  ✓   5 [chromium] › tests/courses.spec.ts:458:7 › Courses - list (read only) › CRS-04: search by title, and the message when nothing matches (8.1s)
+CLEANUP | 0 course(s) deleted
+COURSES | baseline: {"courses":23,"archived":11}
+  ✓   6 [chromium] › tests/courses.spec.ts:483:7 › Courses - data tests (create, check, delete) › CRS-00: clean start (delete leftovers, note the starting numbers) (7.9s)
+  ✓   7 [chromium] › tests/courses.spec.ts:495:7 › Courses - data tests (create, check, delete) › CRS-05: add a course with a title only (8.9s)
+COURSES | CRS-06 overview page text: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad qa_crs_full Active Student Activity: Enabled JOIN CODE: Y3VU5J2Y7Q Watch Guide 2 Students 0 Questions Manage Members Overview Resources Question Bank Student Questions Contests Teams Leaderboard Help Requests Course Overview Edit Description Post Hoc Analysis Students 2 Faculty 2 Student Questions 0 View Bank Questions 0 View Total Questions 0 Tags 2 Teams 0 View Contests 0 View Help Requests 0 View Powered by RISETech | © 2026 All rights reserved.
+COURSES | CRS-06 after Edit Description, field values: " qa_crs_description_text x"
+  ✓   8 [chromium] › tests/courses.spec.ts:510:7 › Courses - data tests (create, check, delete) › CRS-06: add a course with every field filled (17.8s)
+  ✓   9 [chromium] › tests/courses.spec.ts:556:7 › Courses - data tests (create, check, delete) › CRS-04 (description): search finds a course by its description (8.5s)
+  ✓  10 [chromium] › tests/courses.spec.ts:567:7 › Courses - data tests (create, check, delete) › CRS-07: an empty title is blocked with a message (11.5s)
+COURSES | CRS-08a saved. Typed (157 chars): "qa_crs_LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL" Shown (157 chars): "qa_crs_LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+  ✓  11 [chromium] › tests/courses.spec.ts:589:9 › Courses - data tests (create, check, delete) › CRS-08a: title with very long title (150 letters) (11.1s)
+COURSES | CRS-08b saved. Typed (18 chars): "qa_crs_<b>&\"'%$#@!" Shown (18 chars): "qa_crs_<b>&\"'%$#@!"
+  ✓  12 [chromium] › tests/courses.spec.ts:589:9 › Courses - data tests (create, check, delete) › CRS-08b: title with special characters (10.7s)
+COURSES | CRS-08c saved. Typed (17 chars): "qa_crs_emoji_😀_é" Shown (17 chars): "qa_crs_emoji_😀_é"
+  ✓  13 [chromium] › tests/courses.spec.ts:589:9 › Courses - data tests (create, check, delete) › CRS-08c: title with emoji (10.8s)
+COURSES | CRS-08d saved. Typed (20 chars): "   qa_crs_lead_space" Shown (17 chars): "qa_crs_lead_space"
+  ✓  14 [chromium] › tests/courses.spec.ts:589:9 › Courses - data tests (create, check, delete) › CRS-08d: title with leading spaces (10.8s)
+  ✓  15 [chromium] › tests/courses.spec.ts:639:7 › Courses - data tests (create, check, delete) › CRS-09: a duplicate title is rejected with a message (14.6s)
+  ✓  16 [chromium] › tests/courses.spec.ts:660:7 › Courses - data tests (create, check, delete) › CRS-10: select faculty: search, tick, Select All; the count matches (8.8s)
+  ✓  17 [chromium] › tests/courses.spec.ts:707:7 › Courses - data tests (create, check, delete) › CRS-10 (owner): the owner is not offered in the faculty list; ticking another person adds one (9.8s)
+  ✓  18 [chromium] › tests/courses.spec.ts:741:7 › Courses - data tests (create, check, delete) › CRS-11: select students: search, tick, Select All; the count matches (8.4s)
+COURSES | CRS-12 picture address of the existing course anatomy5: no picture
+COURSES | CRS-12 qa_crs_full: picture address http://192.168.1.103/uploads/courses/6a33e5d6c30f8342bc1dbb00/1793602052471-801a3d14-f912-4090-85b1-405fd7959f27-test-small.png; loaded: false
+COURSES | CRS-12 qa_crs_jpg: picture address http://192.168.1.103/uploads/courses/6a33e5d6c30f8342bc1dbb00/1793602178252-5c470c5f-4ce1-4234-b7e7-83c8ae0cc736-test-small.jpg; loaded: false
+  ✘  19 [chromium] › tests/courses.spec.ts:775:7 › Courses - data tests (create, check, delete) › CRS-12: the course picture (png and jpg) is shown on the card (23.4s)
+COURSES | CRS-13 a text file: new text on the page: "Please Select An Image File."; pictures in the form 0 -> 0
+COURSES | CRS-13 a text file named .png: new text on the page: "test-fake-image.png (0.00/5MB)"; pictures in the form 0 -> 1
+COURSES | CRS-13 a picture of 12 MB: new text on the page: "\"Test-Large.Png\" Exceeds 5MB Limit."; pictures in the form 0 -> 0
+  ✘  20 [chromium] › tests/courses.spec.ts:819:7 › Courses - data tests (create, check, delete) › CRS-13: a wrong file type and a very large picture are rejected with a message (24.8s)
+  ✘  21 [chromium] › tests/courses.spec.ts:874:7 › Courses - data tests (create, check, delete) › CRS-14: tags are added with space or Enter and removed (19.2s)
+COURSES | CRS-15a message after Save with Status Archived: Course Validation Failed: Status: `Archived` Is Not A Valid Enum Value For Path `Status`. PeerEd Dashboard Courses My Banks Review Questions OSC
+  ✘  22 [chromium] › tests/courses.spec.ts:907:7 › Courses - data tests (create, check, delete) › CRS-15a: a course can be created with Status Archived (12.0s)
+  ✓  23 [chromium] › tests/courses.spec.ts:940:7 › Courses - data tests (create, check, delete) › CRS-15b: Disable Student Activity is saved as chosen (13.9s)
+  ✓  24 [chromium] › tests/courses.spec.ts:956:7 › Courses - data tests (create, check, delete) › CRS-16: closing the form (X) without saving creates nothing (13.5s)
+  ✓  25 [chromium] › tests/courses.spec.ts:982:7 › Courses - data tests (create, check, delete) › CRS-17: a double-click on Save creates only one course (13.6s)
+  ✓  26 [chromium] › tests/courses.spec.ts:1005:7 › Courses - data tests (create, check, delete) › CRS-18: after saving and refreshing, the course is still there with the right counts (11.2s)
+CLEANUP | deleted "qa_crs_double"
+CLEANUP | deleted "qa_crs_disabled"
+CLEANUP | deleted "qa_crs_jpg"
+CLEANUP | deleted "qa_crs_owner_check"
+CLEANUP | deleted "qa_crs_lead_space"
+CLEANUP | deleted "qa_crs_emoji_😀_é"
+CLEANUP | deleted "qa_crs_<b>&"'%$#@!"
+CLEANUP | deleted "qa_crs_LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL"
+CLEANUP | deleted "qa_crs_full"
+CLEANUP | deleted "qa_crs_title_only"
+CLEANUP | 10 course(s) deleted
+COURSES | after clean-up: {"courses":23,"archived":11}
+  ✓  27 [chromium] › tests/courses.spec.ts:1025:7 › Courses - data tests (create, check, delete) › CRS-99: clean up, then the numbers are back to the start (59.4s)
+
+
+  1) [chromium] › tests/courses.spec.ts:775:7 › Courses - data tests (create, check, delete) › CRS-12: the course picture (png and jpg) is shown on the card 
+
+    Error: qa_crs_full: the uploaded picture did not load. Address: http://192.168.1.103/uploads/courses/6a33e5d6c30f8342bc1dbb00/1793602052471-801a3d14-f912-4090-85b1-405fd7959f27-test-small.png
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      813 |           `${title}: the uploaded picture did not load. Address: ${src}`,
+      814 |         )
+    > 815 |         .toBe(true);
+          |          ^
+      816 |     }
+      817 |   });
+      818 |
+        at /home/haider/Documents/risetech/peered-tests/tests/courses.spec.ts:815:10
+
+    Error: qa_crs_jpg: the uploaded picture did not load. Address: http://192.168.1.103/uploads/courses/6a33e5d6c30f8342bc1dbb00/1793602178252-5c470c5f-4ce1-4234-b7e7-83c8ae0cc736-test-small.jpg
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      813 |           `${title}: the uploaded picture did not load. Address: ${src}`,
+      814 |         )
+    > 815 |         .toBe(true);
+          |          ^
+      816 |     }
+      817 |   });
+      818 |
+        at /home/haider/Documents/risetech/peered-tests/tests/courses.spec.ts:815:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/courses-Courses---data-tes-d674b-nd-jpg-is-shown-on-the-card-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/courses-Courses---data-tes-d674b-nd-jpg-is-shown-on-the-card-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/courses-Courses---data-tes-d674b-nd-jpg-is-shown-on-the-card-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/courses-Courses---data-tes-d674b-nd-jpg-is-shown-on-the-card-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/courses-Courses---data-tes-d674b-nd-jpg-is-shown-on-the-card-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/courses.spec.ts:819:7 › Courses - data tests (create, check, delete) › CRS-13: a wrong file type and a very large picture are rejected with a message 
+
+    Error: a text file named .png: the form accepted it (a picture preview appeared)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 1
+
+      867 |           `${what}: the form accepted it (a picture preview appeared)`,
+      868 |         )
+    > 869 |         .toBe(imagesBefore);
+          |          ^
+      870 |       await closeForm(page);
+      871 |     }
+      872 |   });
+        at /home/haider/Documents/risetech/peered-tests/tests/courses.spec.ts:869:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/courses-Courses---data-tes-628ac-are-rejected-with-a-message-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/courses-Courses---data-tes-628ac-are-rejected-with-a-message-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/courses-Courses---data-tes-628ac-are-rejected-with-a-message-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/courses-Courses---data-tes-628ac-are-rejected-with-a-message-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/courses-Courses---data-tes-628ac-are-rejected-with-a-message-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/courses.spec.ts:874:7 › Courses - data tests (create, check, delete) › CRS-14: tags are added with space or Enter and removed 
+
+    Error: a tag made of only spaces was added (a blank chip)
+
+    expect(locator).toHaveCount(expected) failed
+
+    Locator:  getByRole('dialog').first().locator('[data-tag-index]')
+    Expected: 1
+    Received: 2
+    Timeout:  10000ms
+
+    Call log:
+      - a tag made of only spaces was added (a blank chip) getByRole('dialog').first().locator('[data-tag-index]') with timeout 10000ms
+      - waiting for getByRole('dialog').first().locator('[data-tag-index]')
+        24 × locator resolved to 2 elements
+           - unexpected value "2"
+
+
+      896 |     await expect
+      897 |       .soft(chips, "a tag made of only spaces was added (a blank chip)")
+    > 898 |       .toHaveCount(1);
+          |        ^
+      899 |     await saveEvidence(page, "CRS-14-extra");
+      900 |
+      901 |     // The Clear button removes all tags.
+        at /home/haider/Documents/risetech/peered-tests/tests/courses.spec.ts:898:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/courses-Courses---data-tes-946b7--space-or-Enter-and-removed-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/courses-Courses---data-tes-946b7--space-or-Enter-and-removed-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/courses-Courses---data-tes-946b7--space-or-Enter-and-removed-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/courses-Courses---data-tes-946b7--space-or-Enter-and-removed-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/courses-Courses---data-tes-946b7--space-or-Enter-and-removed-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/courses.spec.ts:907:7 › Courses - data tests (create, check, delete) › CRS-15a: a course can be created with Status Archived 
+
+    Error: the Archived course was not saved. Site message: Course Validation Failed: Status: `Archived` Is Not A Valid Enum Value For Path `Status`. PeerEd Dashboard Courses My Banks Review Questions OSC
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      926 |       closed,
+      927 |       `the Archived course was not saved. Site message: ${message}`,
+    > 928 |     ).toBe(true);
+          |       ^
+      929 |
+      930 |     // (only reached when the site accepts it) the course counts as archived, not active.
+      931 |     await openCourses(page);
+        at /home/haider/Documents/risetech/peered-tests/tests/courses.spec.ts:928:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/courses-Courses---data-tes-b187b-reated-with-Status-Archived-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/courses-Courses---data-tes-b187b-reated-with-Status-Archived-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/courses-Courses---data-tes-b187b-reated-with-Status-Archived-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/courses-Courses---data-tes-b187b-reated-with-Status-Archived-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/courses-Courses---data-tes-b187b-reated-with-Status-Archived-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › tests/courses.spec.ts:775:7 › Courses - data tests (create, check, delete) › CRS-12: the course picture (png and jpg) is shown on the card 
+    [chromium] › tests/courses.spec.ts:819:7 › Courses - data tests (create, check, delete) › CRS-13: a wrong file type and a very large picture are rejected with a message 
+    [chromium] › tests/courses.spec.ts:874:7 › Courses - data tests (create, check, delete) › CRS-14: tags are added with space or Enter and removed 
+    [chromium] › tests/courses.spec.ts:907:7 › Courses - data tests (create, check, delete) › CRS-15a: a course can be created with Status Archived 
+  23 passed (6.5m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

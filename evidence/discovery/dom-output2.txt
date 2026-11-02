@@ -1,0 +1,196 @@
+
+Running 6 tests using 1 worker
+
+  ✓  1 [setup] › tests/auth.setup.ts:10:6 › log in as faculty and save the session (3.4s)
+DOM | 01-courses | url: https://peered.risetech.ai/faculty/courses
+DOM | 01 course card | HTML (752 chars)
+  <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1i06w62" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div><button tabindex="0" type="button" aria-haspopup="menu" aria-expanded="false"></button><div><span>Owner</span></div><div><div><div>A</div><img alt="anatomy5" src="http://192.168.1.103/uploads/courses/6a33e5d6c30f8342bc1dbb00/1792473222138-23464512-de02-4a85-bb7e-8507305c7774-image22.jpg"></div></div><div><h6>anatomy5</h6></div><div><div aria-label="Faculty"><span>2</span></div><div></div><div aria-label="Questions"><span>1</span></div><div></div><div aria-label="Students"><span>3</span></div></div></div></div>
+DOM | 01 course card controls | 1 controls
+  1. {"tag":"button","type":"button"}
+DOM | 01-card-menu | url: https://peered.risetech.ai/faculty/courses
+DOM | 01 card menu items: ["Archive Course\n\nHide from members","Delete Course\n\nCan't be undone"]
+DOM | 01-add-course-form | url: https://peered.risetech.ai/faculty/courses
+DOM | 01 Add Course dialog controls | 9 controls
+  1. {"tag":"button","type":"button"}
+  2. {"tag":"input","type":"text","id":"_r_1s_","placeholder":"Course title"}
+  3. {"tag":"button","type":"button"}
+  4. {"tag":"button","type":"button"}
+  5. {"tag":"input","type":"text","id":"_r_23_","placeholder":"Type and press space or enter","role":"combobox"}
+  6. {"tag":"input","type":"text","id":"react-select-3-input","role":"combobox"}
+  7. {"tag":"input","type":"checkbox","role":"switch"}
+  8. {"tag":"textarea","type":"textarea","id":"_r_25_","placeholder":"Description"}
+  9. {"tag":"button","type":"submit","text":"Save"}
+DOM | 01 Add Course dialog | HTML (3231 chars)
+  <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthSm MuiDialog-paperFullWidth css-a48ra4" role="dialog" aria-labelledby="_r_k_" aria-modal="true" tabindex="-1" data-mui-focusable="" style="--Paper-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);"><h2 id="_r_k_">Add Course<div><button tabindex="0" type="button"></button></div></h2><hr><div><form id="add-course-form" autocomplete="off"><div id="title"><div><span>Title<span>*</span></span></div><div><div><input aria-invalid="false" aria-describedby="_r_1s_-helper-text" autocomplete="off" id="_r_1s_" placeholder="Course title" rows="3" type="text" value=""><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div><p id="_r_1s_-helper-text"><span><span> </span><span></span></span></p></div></div><div><div><span>Faculty Members</span><div><div><p>Faculty</p><div><span>1</span></div><span>(Owner Included)</span></div><button tabindex="0" type="button"></button></div></div><div><span>Students</span><div><div><p>Students</p><div><span>0</span></div></div><button tabindex="0" type="button"></button></div></div></div><div><div><span>Course Image</span></div><div><input hidden="" accept="image/*" type="file"><div><div></div></div><p><span>Click to upload</span> or drag and drop</p><div><span>Browse</span></div></div></div><div><span>Tags (optional)</span><div><div><div><input aria-invalid="false" autocomplete="off" id="_r_23_" placeholder="Type and press space or enter" aria-autocomplete="list" aria-expanded="false" autocapitalize="none" spellcheck="false" role="combobox" type="text" value=""><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div></div></div></div><div><div><div><span>Status<span>*</span></span><div><span id="react-select-3-live-region"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" role="log"></span><div><div><div><div><span>Active</span></div></div><div data-value=""><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-3-input" spellcheck="false" tabindex="0" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" role="combobox" aria-activedescendant="" type="text" value=""></div></div><div><span></span><div aria-hidden="true"></div></div></div></div></div></div><div><label><span><span><input role="switch" type="checkbox"><span></span></span><span></span></span><span>Disable Student Activity</span></label></div></div><div id="description"><div><span>Description (optional)</span></div><div><div><textarea rows="3" aria-invalid="false" aria-describedby="_r_25_-helper-text" autocomplete="off" id="_r_25_" placeholder="Description"></textarea><textarea aria-hidden="true" readonly="" tabindex="-1"></textarea><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div><p id="_r_25_-helper-text"><span><span> </span><span></span></span></p></div></div></form></div><hr><div><div><button tabindex="0" type="submit" form="add-course-form"><span></span>Save</button></div></div></div>
+  ✓  2 [chromium] › tests/dom-discovery.spec.ts:120:7 › DOM discovery - read only › 01 courses page: course card, its menu, Add Course form (7.9s)
+DOM | 02-course-overview | url: https://peered.risetech.ai/faculty/courses/6ad6f88672828906ab7f4ae6
+DOM | 02 tabs: ["Overview","Resources","Question Bank","Student Questions","Contests","Teams","Leaderboard","Help Requests"]
+DOM | 02-question-bank | url: https://peered.risetech.ai/faculty/courses/6ad6f88672828906ab7f4ae6
+DOM | 02-actions-menu | url: https://peered.risetech.ai/faculty/courses/6ad6f88672828906ab7f4ae6
+DOM | 02 Actions menu items: ["Add Question\n\nWrite a new MCQ","Bulk Add Questions\n\nUpload from Excel","Export Questions\n\nAll questions"]
+DOM | 02-add-question-form | url: https://peered.risetech.ai/faculty/courses/6ad6f88672828906ab7f4ae6/add-question
+DOM | 02 Add Question controls | 4 controls
+  1. {"tag":"button","type":"button","aria":"Close guide"}
+  2. {"tag":"button","type":"button","aria":"Pause"}
+  3. {"tag":"button","type":"button","aria":"Playback speed","text":"1x"}
+  4. {"tag":"button","type":"button","aria":"Full screen"}
+DOM | 02 'Enter option here' boxes: 4
+DOM | 02 Add Question form | HTML (1392 chars)
+  <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthFalse css-odhq9k" role="dialog" aria-labelledby="_r_57_" aria-modal="true" tabindex="-1" data-mui-focusable="" style="--Paper-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);"><div><p>Adding a Question with AI Feedback</p><button tabindex="0" type="button" aria-label="Close guide"></button></div><div><div><video src="/guides/add-question.mp4" autoplay="" playsinline="" preload="auto" controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture="" disableremoteplayback=""></video></div></div><div><div><div role="slider" aria-label="Video progress" aria-valuemin="0" aria-valuemax="40" aria-valuenow="1"><div><div><div></div></div></div><div><div><div></div></div></div><div><div><div></div></div></div><div><div><div></div></div></div></div><div><button tabindex="0" type="button" aria-label="Pause"></button><button tabindex="0" type="button" aria-label="Playback speed">1x</button><button tabindex="0" type="button" aria-label="Full screen"></button></div></div><div><div><div>1</div></div><div><p>Step 1 of 4</p><div><p>Fill in the vignette, lead-in, tags, options and the correct answer. Save tells you what's missing.</p></div></div></div></div></div>
+  ✓  3 [chromium] › tests/dom-discovery.spec.ts:161:7 › DOM discovery - read only › 02 Question Bank: Add Question form (13.7s)
+DOM | 03-contests | url: https://peered.risetech.ai/faculty/courses/6ad6f88672828906ab7f4ae6
+DOM | 03 visible text: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad anatomy5 Active Student Activity: Enabled JOIN CODE: VPF6THPAA7 Watch Guide 3 Students 1 Questions Manage Members Overview Resources Question Bank Student Questions Contests Teams Leaderboard Help Requests Contests Watch Guide Status Availability ​ ​ New Contest No Contests Found! Powered by RISETech | © 2026 All rights reserved.
+DOM | 03 Contests page controls | 26 controls
+  1. {"tag":"a","href":"/faculty/dashboard","text":"Dashboard"}
+  2. {"tag":"a","href":"/faculty/courses","text":"Courses"}
+  3. {"tag":"a","href":"/faculty/review-questions","text":"Review Questions"}
+  4. {"tag":"a","href":"/faculty/osce","text":"OSCE"}
+  5. {"tag":"button","type":"button","aria":"Switch to dark mode"}
+  6. {"tag":"button","type":"button","text":"Dr. Asad"}
+  7. {"tag":"button","type":"button"}
+  8. {"tag":"button","type":"button","aria":"Switch course"}
+  9. {"tag":"span","role":"button","text":"Active"}
+  10. {"tag":"span","role":"button","text":"Student Activity: Enabled"}
+  11. {"tag":"button","type":"button","aria":"Copy join code"}
+  12. {"tag":"div","aria":"Watch Guide","role":"button","text":"Watch Guide"}
+  13. {"tag":"div","role":"button","text":"Manage Members"}
+  14. {"tag":"button","type":"button","role":"tab","text":"Overview"}
+  15. {"tag":"button","type":"button","role":"tab","text":"Resources"}
+  16. {"tag":"button","type":"button","role":"tab","text":"Question Bank"}
+  17. {"tag":"button","type":"button","role":"tab","text":"Student Questions"}
+  18. {"tag":"button","type":"button","role":"tab","text":"Contests"}
+  19. {"tag":"button","type":"button","role":"tab","text":"Teams"}
+  20. {"tag":"button","type":"button","role":"tab","text":"Leaderboard"}
+  21. {"tag":"button","type":"button","role":"tab","text":"Help Requests"}
+  22. {"tag":"button","type":"button","aria":"Watch Guide","text":"Watch Guide"}
+  23. {"tag":"input","type":"text","id":"react-select-3-input","role":"combobox"}
+  24. {"tag":"input","type":"text","id":"react-select-4-input","role":"combobox"}
+  25. {"tag":"input","type":"text","id":"_r_3e_","placeholder":"Search by title or description..."}
+  26. {"tag":"button","type":"button","text":"New Contest"}
+DOM | 03 contest list HTML FAILED: locator.evaluate: Timeout 8000ms exceeded.
+DOM | 03 contest card menu FAILED: locator.click: Timeout 8000ms exceeded.
+DOM | 03-new-contest-form | url: https://peered.risetech.ai/faculty/courses/6ad6f88672828906ab7f4ae6
+DOM | 03 New Contest controls | 16 controls
+  1. {"tag":"button","type":"button"}
+  2. {"tag":"button","type":"button","role":"tab","text":"Details & Settings"}
+  3. {"tag":"button","type":"button","role":"tab","text":"Questions (0)"}
+  4. {"tag":"button","type":"button","role":"tab","text":"Gamification & Perks"}
+  5. {"tag":"input","type":"text","id":"_r_3n_"}
+  6. {"tag":"textarea","type":"textarea","id":"_r_3o_"}
+  7. {"tag":"input","type":"datetime-local","id":"_r_3p_"}
+  8. {"tag":"input","type":"datetime-local","id":"_r_3q_"}
+  9. {"tag":"input","type":"text","id":"react-select-5-input","role":"combobox"}
+  10. {"tag":"input","type":"text","id":"react-select-6-input","role":"combobox"}
+  11. {"tag":"input","type":"number","id":"_r_3r_"}
+  12. {"tag":"input","type":"number","id":"_r_3s_"}
+  13. {"tag":"input","type":"checkbox"}
+  14. {"tag":"input","type":"checkbox"}
+  15. {"tag":"input","type":"checkbox"}
+  16. {"tag":"button","type":"submit","text":"Save"}
+DOM | 03 New Contest dialog | HTML (5183 chars)
+  <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthMd MuiDialog-paperFullWidth css-11pzqdh" role="dialog" aria-labelledby="_r_3g_" aria-modal="true" tabindex="-1" data-mui-focusable="" style="--Paper-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);"><h2 id="_r_3g_">New Contest<div><button tabindex="0" type="button"></button></div></h2><hr><div><form id="add-contest-form" autocomplete="off"><div><div><div></div><div><div role="tablist"><button tabindex="0" type="button" role="tab" aria-selected="true">Details &amp; Settings</button><button tabindex="-1" type="button" role="tab" aria-selected="false">Questions (0)</button><button tabindex="-1" type="button" role="tab" aria-selected="false">Gamification &amp; Perks</button></div><span></span></div></div></div><div><div><div><h6>Basic Info</h6><hr><div><div id="title"><div><span>Title<span>*</span></span></div><div><div><input aria-invalid="false" aria-describedby="_r_3n_-helper-text" autocomplete="off" id="_r_3n_" rows="3" type="text" value=""><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div><p id="_r_3n_-helper-text"><span><span> </span><span></span></span></p></div></div><div id="description"><div><span>Description (optional)</span></div><div><div><textarea rows="3" aria-invalid="false" aria-describedby="_r_3o_-helper-text" autocomplete="off" id="_r_3o_"></textarea><textarea aria-hidden="true" readonly="" tabindex="-1"></textarea><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div><p id="_r_3o_-helper-text"><span><span> </span><span></span></span></p></div></div><div id="startAt"><div><span>Start Date &amp; Time</span></div><div><div><input aria-invalid="false" aria-describedby="_r_3p_-helper-text" autocomplete="off" id="_r_3p_" rows="3" type="datetime-local" value=""><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div><p id="_r_3p_-helper-text"><span><span> </span><span></span></span></p></div></div><div id="endAt"><div><span>End Date &amp; Time</span></div><div><div><input aria-invalid="false" aria-describedby="_r_3q_-helper-text" autocomplete="off" id="_r_3q_" rows="3" type="datetime-local" value=""><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div><p id="_r_3q_-helper-text"><span><span> </span><span></span></span></p></div></div><div><span>Status<span>*</span></span><div><span id="react-select-5-live-region"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" role="log"></span><div><div><div><div><span>Draft</span></div></div><div data-value=""><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-5-input" spellcheck="false" tabindex="0" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" role="combobox" aria-activedescendant="" type="text" value=""></div></div><div><span></span><div aria-hidden="true"></div></div></div></div></div></div></div><div><h6>Game Settings</h6><hr><div><div><div><span>Answering Mode<span>*</span></span><div><span id="react-select-6-live-region"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" role="log"></span><div><div><div><div><span>Open Team Answering</span></div></div><div data-value=""><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-6-input" spellcheck="false" tabindex="0" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" role="combobox" aria-activedescendant="" type="text" value=""></div></div><div><span></span><div aria-hidden="true"></div></div></div></div></div><span>Any member of the team can submit the answer.</span></div><div><div id="timePerQuestionSec"><div><span>Time/Question (sec)<span>*</span></span></div><div><div><input aria-invalid="false" aria-describedby="_r_3r_-helper-text" autocomplete="off" id="_r_3r_" rows="3" type="number" value="30"><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div><p id="_r_3r_-helper-text"><span><span> </span><span></span></span></p></div></div></div><div id="negativeMarking"><div><span>Negative Marking (optional)</span></div><div><div><input aria-invalid="false" aria-describedby="_r_3s_-helper-text" autocomplete="off" id="_r_3s_" rows="3" type="number" value="0"><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div><p id="_r_3s_-helper-text"><span><span> </span><span></span></span></p></div></div><div><label><span><input data-indeterminate="false" type="checkbox" checked=""></span><p>Enable Live Leaderboard</p></label><label><span><input data-indeterminate="false" type="checkbox"></span><p>Hide Absolute Scores (Rank only)</p></label><label><span><input data-indeterminate="false" type="checkbox"></spa
+DOM | 03 New Contest tabs: ["Details & Settings","Questions (0)","Gamification & Perks"]
+  ✓  4 [chromium] › tests/dom-discovery.spec.ts:200:7 › DOM discovery - read only › 03 Contests tab: existing contest, its menu, New Contest form (28.8s)
+DOM | 04-question-row | url: https://peered.risetech.ai/faculty/courses/6ad6f88672828906ab7f4ae6
+DOM | 04 question row | HTML (1532 chars)
+  <div role="rowgroup" class="MuiDataGrid-virtualScrollerRenderZone css-1vouojk" style="transform: translate3d(0px, 0px, 0px);"><div data-id="6ad7000a72828906ab7f4aea" data-rowindex="0" role="row" aria-rowindex="2" aria-selected="false"><div role="presentation"></div><div role="gridcell" data-field="__check__" data-colindex="0" aria-colindex="1" aria-colspan="1" aria-rowspan="1" tabindex="-1"><span><input tabindex="-1" data-indeterminate="false" aria-label="Select row" type="checkbox" value="false" name="select_row"><span font-size="medium"></span></span></div><div role="gridcell" data-field="leadin" data-colindex="1" aria-colindex="2" aria-colspan="1" aria-rowspan="1" tabindex="-1"><span aria-label="">Which of the following structures is most likely injured in this patient?</span></div><div role="gridcell" data-field="student_Name" data-colindex="2" aria-colindex="3" aria-colspan="1" aria-rowspan="1" tabindex="-1"><span aria-label="">Dr. Asad Mansoor Khan</span></div><div role="gridcell" data-field="createdAt" data-colindex="3" aria-colindex="4" aria-colspan="1" aria-rowspan="1" tabindex="-1">20 Oct, 10:45 am</div><div role="gridcell" data-field="actions" data-colindex="4" aria-colindex="5" aria-colspan="1" aria-rowspan="1" tabindex="-1"><div><button tabindex="0" type="button" aria-label="Manual Review"></button><button tabindex="0" type="button" aria-label="Edit Question"></button><button tabindex="0" type="button" aria-label="Delete Question"></button></div></div><div role="presentation"></div></div></div>
+DOM | 04 question row controls | 4 controls
+  1. {"tag":"input","type":"checkbox","name":"select_row","aria":"Select row"}
+  2. {"tag":"button","type":"button","aria":"Manual Review"}
+  3. {"tag":"button","type":"button","aria":"Edit Question"}
+  4. {"tag":"button","type":"button","aria":"Delete Question"}
+  ✓  5 [chromium] › tests/dom-discovery.spec.ts:260:7 › DOM discovery - read only › 04 Question Bank row: the buttons of an existing question (14.4s)
+DOM | 05-private-bank | url: https://peered.risetech.ai/faculty/private-bank
+DOM | 05 Private Bank page controls | 77 controls
+  1. {"tag":"a","href":"/faculty/dashboard","text":"Dashboard"}
+  2. {"tag":"a","href":"/faculty/courses","text":"Courses"}
+  3. {"tag":"a","href":"/faculty/review-questions","text":"Review Questions"}
+  4. {"tag":"a","href":"/faculty/osce","text":"OSCE"}
+  5. {"tag":"button","type":"button","aria":"Switch to dark mode"}
+  6. {"tag":"button","type":"button","text":"Dr. Asad"}
+  7. {"tag":"button","type":"button","aria":"Watch Guide","text":"Watch Guide"}
+  8. {"tag":"input","type":"text","id":"react-select-2-input","role":"combobox"}
+  9. {"tag":"input","type":"text","id":"_r_p_","placeholder":"Search by question..."}
+  10. {"tag":"button","type":"button","text":"Actions"}
+  11. {"tag":"div","role":"button","text":"Select all"}
+  12. {"tag":"div","role":"button","text":"biochem"}
+  13. {"tag":"div","role":"button","text":"asdsddsa"}
+  14. {"tag":"div","role":"button","text":"akdka"}
+  15. {"tag":"div","role":"button","text":"sdsaasd"}
+  16. {"tag":"div","role":"button","text":"test"}
+  17. {"tag":"div","role":"button","text":"anatomy"}
+  18. {"tag":"div","role":"button","text":"diagnostic"}
+  19. {"tag":"div","role":"button","text":"basics"}
+  20. {"tag":"div","role":"button","text":"proff-1"}
+  21. {"tag":"div","role":"button","text":"nooooo"}
+  22. {"tag":"div","role":"button","text":"i-will-delete-this-tag"}
+  23. {"tag":"div","role":"button","text":"medicine"}
+  24. {"tag":"div","role":"button","text":"pathology"}
+  25. {"tag":"div","role":"button","text":"biology"}
+  26. {"tag":"div","role":"button","text":"chemistry"}
+  27. {"tag":"input","type":"checkbox","name":"select_all_rows","aria":"Select all rows"}
+  28. {"tag":"button","type":"button","aria":"Sort"}
+  29. {"tag":"button","type":"button","id":"_r_18_","aria":"Question column menu"}
+  30. {"tag":"button","type":"button","id":"_r_1f_","aria":"Published In column menu"}
+  31. {"tag":"button","type":"button","aria":"Sort"}
+  32. {"tag":"button","type":"button","id":"_r_1k_","aria":"Created column menu"}
+  33. {"tag":"input","type":"checkbox","name":"select_row","aria":"Select row"}
+  34. {"tag":"button","type":"button","aria":"Manual Review"}
+  35. {"tag":"button","type":"button"}
+  36. {"tag":"button","type":"button"}
+  37. {"tag":"input","type":"checkbox","name":"select_row","aria":"Select row"}
+  38. {"tag":"button","type":"button","aria":"Manual Review"}
+  39. {"tag":"button","type":"button"}
+  40. {"tag":"button","type":"button"}
+  41. {"tag":"input","type":"checkbox","name":"select_row","aria":"Select row"}
+  42. {"tag":"button","type":"button","aria":"Manual Review"}
+  43. {"tag":"button","type":"button"}
+  44. {"tag":"button","type":"button"}
+  45. {"tag":"input","type":"checkbox","name":"select_row","aria":"Select row"}
+  46. {"tag":"button","type":"button","aria":"Manual Review"}
+  47. {"tag":"button","type":"button"}
+  48. {"tag":"button","type":"button"}
+  49. {"tag":"input","type":"checkbox","name":"select_row","aria":"Select row"}
+  50. {"tag":"button","type":"button","aria":"Manual Review"}
+  51. {"tag":"button","type":"button"}
+  52. {"tag":"button","type":"button"}
+  53. {"tag":"input","type":"checkbox","name":"select_row","aria":"Select row"}
+  54. {"tag":"button","type":"button","aria":"Manual Review"}
+  55. {"tag":"button","type":"button"}
+  56. {"tag":"button","type":"button"}
+  57. {"tag":"input","type":"checkbox","name":"select_row","aria":"Select row"}
+  58. {"tag":"button","type":"button","aria":"Manual Review"}
+  59. {"tag":"button","type":"button"}
+  60. {"tag":"button","type":"button"}
+  61. {"tag":"input","type":"checkbox","name":"select_row","aria":"Select row"}
+  62. {"tag":"button","type":"button","aria":"Manual Review"}
+  63. {"tag":"button","type":"button"}
+  64. {"tag":"button","type":"button"}
+  65. {"tag":"input","type":"checkbox","name":"select_row","aria":"Select row"}
+  66. {"tag":"button","type":"button","aria":"Manual Review"}
+  67. {"tag":"button","type":"button"}
+  68. {"tag":"button","type":"button"}
+  69. {"tag":"input","type":"checkbox","name":"select_row","aria":"Select row"}
+  70. {"tag":"button","type":"button","aria":"Manual Review"}
+  71. {"tag":"button","type":"button"}
+  72. {"tag":"button","type":"button"}
+  73. {"tag":"input","type":"text"}
+  74. {"tag":"button","type":"button","aria":"Go to first page"}
+  75. {"tag":"button","type":"button","aria":"Go to previous page"}
+  76. {"tag":"button","type":"button","aria":"Go to next page"}
+  77. {"tag":"button","type":"button","aria":"Go to last page"}
+DOM | 05 Private Bank row | HTML (1392 chars)
+  <div data-id="6adb14592c84c41b5f4dd384" data-rowindex="0" role="row" class="MuiDataGrid-row MuiDataGrid-row--firstVisible" aria-rowindex="2" aria-selected="false" style="max-height: 52px; min-height: 52px; --height: 52px;"><div role="presentation"></div><div role="gridcell" data-field="__check__" data-colindex="0" aria-colindex="1" aria-colspan="1" aria-rowspan="1" tabindex="-1"><span><input tabindex="-1" data-indeterminate="false" aria-label="Select row" type="checkbox" value="false" name="select_row"><span font-size="medium"></span></span></div><div role="gridcell" data-field="leadin" data-colindex="1" aria-colindex="2" aria-colspan="1" aria-rowspan="1" tabindex="-1"><span aria-label="">why it is being asked?</span></div><div role="gridcell" data-field="publishedIn" data-colindex="2" aria-colindex="3" aria-colspan="1" aria-rowspan="1" tabindex="-1"><div><span>Unpublished</span></div></div><div role="gridcell" data-field="createdAt" data-colindex="3" aria-colindex="4" aria-colspan="1" aria-rowspan="1" tabindex="-1">23 Oct, 1:01 pm</div><div role="gridcell" data-field="actions" data-colindex="4" aria-colindex="5" aria-colspan="1" aria-rowspan="1" tabindex="-1"><div><button tabindex="0" type="button" aria-label="Manual Review"></button><button tabindex="0" type="button"></button><button tabindex="0" type="button"></button></div></div><div role="presentation"></div></div>
+DOM | 05 Private Bank row controls | 4 controls
+  1. {"tag":"input","type":"checkbox","name":"select_row","aria":"Select row"}
+  2. {"tag":"button","type":"button","aria":"Manual Review"}
+  3. {"tag":"button","type":"button"}
+  4. {"tag":"button","type":"button"}
+  ✓  6 [chromium] › tests/dom-discovery.spec.ts:282:7 › DOM discovery - read only › 05 Private Bank: inputs and one row (7.7s)
+
+  6 passed (1.3m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

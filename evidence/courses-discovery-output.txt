@@ -1,0 +1,158 @@
+
+Running 5 tests using 1 worker
+
+  ✓  1 [setup] › tests/auth.setup.ts:10:6 › log in as faculty and save the session (3.3s)
+CRS | 01-courses | url: https://peered.risetech.ai/faculty/courses
+CRS | 01 visible text: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad Courses 23 Filter by role ​ ​ Add Course Owner A anatomy5 2 1 3 Owner A anatomy4 2 0 2 Owner B Biochemistry 1 0 0 Owner P Pathology 1 0 0 Owner P Physiology 1 0 0 Owner A Anatomy-26 1 3 0 Owner P Pharmacology 1 66 0 Owner E ENT 1 26 1 1 2 Archived 11 Powered by RISETech | © 2026 All rights reserved.
+CRS | 01 first course card | HTML (752 chars)
+  <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1i06w62" style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"><div><button tabindex="0" type="button" aria-haspopup="menu" aria-expanded="false"></button><div><span>Owner</span></div><div><div><div>A</div><img alt="anatomy5" src="http://192.168.1.103/uploads/courses/6a33e5d6c30f8342bc1dbb00/1792473222138-23464512-de02-4a85-bb7e-8507305c7774-image22.jpg"></div></div><div><h6>anatomy5</h6></div><div><div aria-label="Faculty"><span>2</span></div><div></div><div aria-label="Questions"><span>1</span></div><div></div><div aria-label="Students"><span>3</span></div></div></div></div>
+CRS | 01 first card controls | 1 controls
+  1. {"tag":"button","type":"button","popup":"menu"}
+CRS | 01 page controls | 26 controls
+  1. {"tag":"a","text":"Dashboard"}
+  2. {"tag":"a","text":"Courses"}
+  3. {"tag":"a","text":"Review Questions"}
+  4. {"tag":"a","text":"OSCE"}
+  5. {"tag":"button","type":"button","aria":"Switch to dark mode"}
+  6. {"tag":"button","type":"button","text":"Dr. Asad"}
+  7. {"tag":"button","type":"button","aria":"Grid view"}
+  8. {"tag":"button","type":"button","aria":"List view"}
+  9. {"tag":"input","type":"text","id":"react-select-2-input","role":"combobox","popup":"true"}
+  10. {"tag":"input","type":"text","id":"_r_i_","placeholder":"Search by title or description..."}
+  11. {"tag":"button","type":"button","text":"Add Course"}
+  12. {"tag":"button","type":"button","popup":"menu"}
+  13. {"tag":"button","type":"button","popup":"menu"}
+  14. {"tag":"button","type":"button","popup":"menu"}
+  15. {"tag":"button","type":"button","popup":"menu"}
+  16. {"tag":"button","type":"button","popup":"menu"}
+  17. {"tag":"button","type":"button","popup":"menu"}
+  18. {"tag":"button","type":"button","popup":"menu"}
+  19. {"tag":"button","type":"button","popup":"menu"}
+  20. {"tag":"button","type":"button","aria":"Go to first page"}
+  21. {"tag":"button","type":"button","aria":"Go to previous page"}
+  22. {"tag":"button","type":"button","aria":"page 1","text":"1"}
+  23. {"tag":"button","type":"button","aria":"Go to page 2","text":"2"}
+  24. {"tag":"button","type":"button","aria":"Go to next page"}
+  25. {"tag":"button","type":"button","aria":"Go to last page"}
+  26. {"tag":"button","type":"button"}
+CRS | 01-list-view | url: https://peered.risetech.ai/faculty/courses
+CRS | 01 list view text: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad Courses 23 Filter by role ​ ​ Add Course Owner A anatomy5 2 1 3 Owner A anatomy4 2 0 2 Owner B Biochemistry 1 0 0 Owner P Pathology 1 0 0 Owner P Physiology 1 0 0 Owner A Anatomy-26 1 3 0 Owner P Pharmacology 1 66 0 Owner E ENT 1 26 1 1 2 Archived 11 Powered by RISETech | © 2026 All rights reserved.
+CRS | 01 filter by role FAILED: locator.click: Timeout 8000ms exceeded.
+CRS | 01-search-no-match | url: https://peered.risetech.ai/faculty/courses
+CRS | 01 no-match text: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad Courses 23 Filter by role ​ ​ Add Course No Results Found For "Zzzz_no_match_qa" Powered by RISETech | © 2026 All rights reserved.
+CRS | 01 Archived section FAILED: locator.click: Timeout 8000ms exceeded.
+  ✓  2 [chromium] › tests/courses-discovery.spec.ts:149:7 › Courses discovery - read only › 01 courses page: cards, grid/list, filter, search, Archived (25.9s)
+CRS | 02-form-empty | url: https://peered.risetech.ai/faculty/courses
+CRS | 02 form controls | 9 controls
+  1. {"tag":"button","type":"button"}
+  2. {"tag":"input","type":"text","id":"_r_1s_","placeholder":"Course title"}
+  3. {"tag":"button","type":"button"}
+  4. {"tag":"button","type":"button"}
+  5. {"tag":"input","type":"text","id":"_r_23_","placeholder":"Type and press space or enter","role":"combobox"}
+  6. {"tag":"input","type":"text","id":"react-select-3-input","role":"combobox","popup":"true"}
+  7. {"tag":"input","type":"checkbox","role":"switch"}
+  8. {"tag":"textarea","type":"textarea","id":"_r_25_","placeholder":"Description"}
+  9. {"tag":"button","type":"submit","text":"Save"}
+CRS | 02 form | HTML (3231 chars)
+  <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthSm MuiDialog-paperFullWidth css-a48ra4" role="dialog" aria-labelledby="_r_k_" aria-modal="true" tabindex="-1" data-mui-focusable="" style="--Paper-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);"><h2 id="_r_k_">Add Course<div><button tabindex="0" type="button"></button></div></h2><hr><div><form id="add-course-form" autocomplete="off"><div id="title"><div><span>Title<span>*</span></span></div><div><div><input aria-invalid="false" aria-describedby="_r_1s_-helper-text" autocomplete="off" id="_r_1s_" placeholder="Course title" rows="3" type="text" value=""><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div><p id="_r_1s_-helper-text"><span><span> </span><span></span></span></p></div></div><div><div><span>Faculty Members</span><div><div><p>Faculty</p><div><span>1</span></div><span>(Owner Included)</span></div><button tabindex="0" type="button"></button></div></div><div><span>Students</span><div><div><p>Students</p><div><span>0</span></div></div><button tabindex="0" type="button"></button></div></div></div><div><div><span>Course Image</span></div><div><input hidden="" accept="image/*" type="file"><div><div></div></div><p><span>Click to upload</span> or drag and drop</p><div><span>Browse</span></div></div></div><div><span>Tags (optional)</span><div><div><div><input aria-invalid="false" autocomplete="off" id="_r_23_" placeholder="Type and press space or enter" aria-autocomplete="list" aria-expanded="false" autocapitalize="none" spellcheck="false" role="combobox" type="text" value=""><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div></div></div></div><div><div><div><span>Status<span>*</span></span><div><span id="react-select-3-live-region"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" role="log"></span><div><div><div><div><span>Active</span></div></div><div data-value=""><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-3-input" spellcheck="false" tabindex="0" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" role="combobox" aria-activedescendant="" type="text" value=""></div></div><div><span></span><div aria-hidden="true"></div></div></div></div></div></div><div><label><span><span><input role="switch" type="checkbox"><span></span></span><span></span></span><span>Disable Student Activity</span></label></div></div><div id="description"><div><span>Description (optional)</span></div><div><div><textarea rows="3" aria-invalid="false" aria-describedby="_r_25_-helper-text" autocomplete="off" id="_r_25_" placeholder="Description"></textarea><textarea aria-hidden="true" readonly="" tabindex="-1"></textarea><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div><p id="_r_25_-helper-text"><span><span> </span><span></span></span></p></div></div></form></div><hr><div><div><button tabindex="0" type="submit" form="add-course-form"><span></span>Save</button></div></div></div>
+CRS | 02 Status list FAILED: locator.click: Timeout 8000ms exceeded.
+CRS | form closed: true
+  ✓  3 [chromium] › tests/courses-discovery.spec.ts:201:7 › Courses discovery - read only › 02 Add Course form: fields and Status list (13.7s)
+CRS | 03-faculty-picker | url: https://peered.risetech.ai/faculty/courses
+CRS | 03 dialogs open: 1
+CRS | 03 faculty picker controls | 15 controls
+  1. {"tag":"button","type":"button"}
+  2. {"tag":"input","type":"text","id":"_r_28_","placeholder":"Search faculty..."}
+  3. {"tag":"input","type":"checkbox"}
+  4. {"tag":"input","type":"checkbox"}
+  5. {"tag":"input","type":"checkbox"}
+  6. {"tag":"input","type":"checkbox"}
+  7. {"tag":"input","type":"checkbox"}
+  8. {"tag":"input","type":"checkbox"}
+  9. {"tag":"input","type":"checkbox"}
+  10. {"tag":"input","type":"checkbox"}
+  11. {"tag":"input","type":"checkbox"}
+  12. {"tag":"input","type":"checkbox"}
+  13. {"tag":"input","type":"checkbox"}
+  14. {"tag":"input","type":"checkbox"}
+  15. {"tag":"button","type":"button","text":"Continue"}
+CRS | 03 faculty picker | HTML (2583 chars)
+  <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthSm MuiDialog-paperFullWidth css-a48ra4" role="dialog" aria-labelledby="_r_1v_" aria-modal="true" tabindex="-1" data-mui-focusable="" style="--Paper-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);"><h2 id="_r_1v_">Select Faculty<div><button tabindex="0" type="button"></button></div></h2><hr><div><div><div><div><span aria-hidden="true">​</span></div><input aria-invalid="false" id="_r_28_" placeholder="Search faculty..." type="text" value=""><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div></div><div><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span><p>Select All</p><div><div aria-label="Manager: Dr. Asad Mansoor Khan · always included"><div>D</div><span>Manager included</span></div></div><div><span>0/11</span></div></div><div><div><div>U</div><p>Umar Ahmad</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>D</div><p>Dr. Asad</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>F</div><p>Faculty-1</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>A</div><p>Amna Khan</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>D</div><p>Demo</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>J</div><p>Jess</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>A</div><p>alinshs</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>D</div><p>Dr. Salman</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>Q</div><p>Qayam</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>J</div><p>Juan</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>D</div><p>Dr. Usman Akram</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div></div></div><hr><div><button tabindex="0" type="button">Continue<span></span></button></div></div>
+CRS | 03 faculty picker text: Select Faculty ​ ​ Select All D Manager included 0/11 U Umar Ahmad D Dr. Asad F Faculty-1 A Amna Khan D Demo J Jess A alinshs D Dr. Salman Q Qayam J Juan D Dr. Usman Akram Continue
+CRS | form closed: false
+CRS | 03-students-picker | url: https://peered.risetech.ai/faculty/courses
+CRS | 03 students picker controls | 28 controls
+  1. {"tag":"button","type":"button"}
+  2. {"tag":"input","type":"text","id":"_r_28_","placeholder":"Search students..."}
+  3. {"tag":"input","type":"checkbox"}
+  4. {"tag":"input","type":"checkbox"}
+  5. {"tag":"input","type":"checkbox"}
+  6. {"tag":"input","type":"checkbox"}
+  7. {"tag":"input","type":"checkbox"}
+  8. {"tag":"input","type":"checkbox"}
+  9. {"tag":"input","type":"checkbox"}
+  10. {"tag":"input","type":"checkbox"}
+  11. {"tag":"input","type":"checkbox"}
+  12. {"tag":"input","type":"checkbox"}
+  13. {"tag":"input","type":"checkbox"}
+  14. {"tag":"input","type":"checkbox"}
+  15. {"tag":"input","type":"checkbox"}
+  16. {"tag":"input","type":"checkbox"}
+  17. {"tag":"input","type":"checkbox"}
+  18. {"tag":"input","type":"checkbox"}
+  19. {"tag":"input","type":"checkbox"}
+  20. {"tag":"input","type":"checkbox"}
+  21. {"tag":"input","type":"checkbox"}
+  22. {"tag":"input","type":"checkbox"}
+  23. {"tag":"input","type":"checkbox"}
+  24. {"tag":"input","type":"checkbox"}
+  25. {"tag":"input","type":"checkbox"}
+  26. {"tag":"input","type":"checkbox"}
+  27. {"tag":"input","type":"checkbox"}
+  28. {"tag":"button","type":"button","text":"Continue"}
+CRS | 03 students picker | HTML (4143 chars)
+  <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthSm MuiDialog-paperFullWidth css-a48ra4" role="dialog" aria-labelledby="_r_21_" aria-modal="true" tabindex="-1" data-mui-focusable="" style="--Paper-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);"><h2 id="_r_21_">Select Students<div><button tabindex="0" type="button"></button></div></h2><hr><div><div><div><div><span aria-hidden="true">​</span></div><input aria-invalid="false" id="_r_28_" placeholder="Search students..." type="text" value=""><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div></div><div><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span><p>Select All</p><div><span>0/24</span></div></div><div><div><div>F</div><p>Finn </p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>A</div><p>Ahmad</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>M</div><p>Mohsin</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>M</div><p>Muhammad Ali</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>B</div><p>Bilal Amir</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>S</div><p>Stone</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>A</div><p>AMK</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>D</div><p>David</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>S</div><p>Sadia</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>T</div><p>Test Two</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>J</div><p>Josh</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>N</div><p>Noman</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>U</div><p>Umar</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>A</div><p>Asif</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>T</div><p>Tim</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>T</div><p>Test Three</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>R</div><p>Rauf</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>A</div><p>Ali (NSHS Demo)</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>B</div><p>Brevis</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>A</div><p>Asad</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>H</div><p>Hamza (NSHS Demo)</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>O</div><p>Owen</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>F</div><p>Finn</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div><div><div>T</div><p>Test One</p><span><input data-indeterminate="false" type="checkbox"><span font-size="small"></span></span></div></div></div><hr><div><button tabindex="0" type="button">Continue<span></span></button></div></div>
+CRS | 03 students picker text: Select Students ​ ​ Select All 0/24 F Finn A Ahmad M Mohsin M Muhammad Ali B Bilal Amir S Stone A AMK D David S Sadia T Test Two J Josh N Noman U Umar A Asif T Tim T Test Three R Rauf A Ali (NSHS Demo) B Brevis A Asad H Hamza (NSHS Demo) O Owen F Finn T Test One Continue
+CRS | form closed: false
+  ✓  4 [chromium] › tests/courses-discovery.spec.ts:219:7 › Courses discovery - read only › 03 Add Course form: faculty and student pickers (13.4s)
+CRS | 04 file inputs: [{"accept":"image/*","multiple":false}]
+CRS | 04-tags-added | url: https://peered.risetech.ai/faculty/courses
+CRS | 04 form after two tags | HTML (3482 chars)
+  <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthSm MuiDialog-paperFullWidth css-a48ra4" role="dialog" aria-labelledby="_r_k_" aria-modal="true" tabindex="-1" data-mui-focusable="" style="--Paper-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);"><h2 id="_r_k_">Add Course<div><button tabindex="0" type="button"></button></div></h2><hr><div><form id="add-course-form" autocomplete="off"><div id="title"><div><span>Title<span>*</span></span></div><div><div><input aria-invalid="false" aria-describedby="_r_1s_-helper-text" autocomplete="off" id="_r_1s_" placeholder="Course title" rows="3" type="text" value=""><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div><p id="_r_1s_-helper-text"><span><span> </span><span></span></span></p></div></div><div><div><span>Faculty Members</span><div><div><p>Faculty</p><div><span>1</span></div><span>(Owner Included)</span></div><button tabindex="0" type="button"></button></div></div><div><span>Students</span><div><div><p>Students</p><div><span>0</span></div></div><button tabindex="0" type="button"></button></div></div></div><div><div><span>Course Image</span></div><div><input hidden="" accept="image/*" type="file"><div><div></div></div><p><span>Click to upload</span> or drag and drop</p><div><span>Browse</span></div></div></div><div><span>Tags (optional)</span><div><div><div><div tabindex="-1" role="button" data-tag-index="0"><span>qa_tag_one</span></div><div tabindex="-1" role="button" data-tag-index="1"><span>qa_tag_two</span></div><input aria-invalid="false" autocomplete="off" id="_r_23_" placeholder="Type and press space or enter" aria-autocomplete="list" aria-expanded="false" autocapitalize="none" spellcheck="false" role="combobox" type="text" value=""><div><button tabindex="-1" type="button" aria-label="Clear" title="Clear"></button></div><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div></div></div></div><div><div><div><span>Status<span>*</span></span><div><span id="react-select-3-live-region"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" role="log"></span><div><div><div><div><span>Active</span></div></div><div data-value=""><input autocapitalize="none" autocomplete="off" autocorrect="off" id="react-select-3-input" spellcheck="false" tabindex="0" aria-autocomplete="list" aria-expanded="false" aria-haspopup="true" role="combobox" aria-activedescendant="" type="text" value=""></div></div><div><span></span><div aria-hidden="true"></div></div></div></div></div></div><div><label><span><span><input role="switch" type="checkbox"><span></span></span><span></span></span><span>Disable Student Activity</span></label></div></div><div id="description"><div><span>Description (optional)</span></div><div><div><textarea rows="3" aria-invalid="false" aria-describedby="_r_25_-helper-text" autocomplete="off" id="_r_25_" placeholder="Description"></textarea><textarea aria-hidden="true" readonly="" tabindex="-1"></textarea><fieldset aria-hidden="true"><legend><span aria-hidden="true">​</span></legend></fieldset></div><p id="_r_25_-helper-text"><span><span> </span><span></span></span></p></div></div></form></div><hr><div><div><button tabindex="0" type="submit" form="add-course-form"><span></span>Save</button></div></div></div>
+CRS | 04 controls after two tags | 12 controls
+  1. {"tag":"button","type":"button"}
+  2. {"tag":"input","type":"text","id":"_r_1s_","placeholder":"Course title"}
+  3. {"tag":"button","type":"button"}
+  4. {"tag":"button","type":"button"}
+  5. {"tag":"div","role":"button","text":"qa_tag_one"}
+  6. {"tag":"div","role":"button","text":"qa_tag_two"}
+  7. {"tag":"input","type":"text","id":"_r_23_","placeholder":"Type and press space or enter","role":"combobox"}
+  8. {"tag":"button","type":"button","aria":"Clear"}
+  9. {"tag":"input","type":"text","id":"react-select-3-input","role":"combobox","popup":"true"}
+  10. {"tag":"input","type":"checkbox","role":"switch"}
+  11. {"tag":"textarea","type":"textarea","id":"_r_25_","placeholder":"Description"}
+  12. {"tag":"button","type":"submit","text":"Save"}
+CRS | 04-toggle-on | url: https://peered.risetech.ai/faculty/courses
+CRS | 04 controls after toggle | 12 controls
+  1. {"tag":"button","type":"button"}
+  2. {"tag":"input","type":"text","id":"_r_1s_","placeholder":"Course title"}
+  3. {"tag":"button","type":"button"}
+  4. {"tag":"button","type":"button"}
+  5. {"tag":"div","role":"button","text":"qa_tag_one"}
+  6. {"tag":"div","role":"button","text":"qa_tag_two"}
+  7. {"tag":"input","type":"text","id":"_r_23_","placeholder":"Type and press space or enter","role":"combobox"}
+  8. {"tag":"button","type":"button","aria":"Clear"}
+  9. {"tag":"input","type":"text","id":"react-select-3-input","role":"combobox","popup":"true"}
+  10. {"tag":"input","type":"checkbox","role":"switch"}
+  11. {"tag":"textarea","type":"textarea","id":"_r_25_","placeholder":"Description"}
+  12. {"tag":"button","type":"submit","text":"Save"}
+CRS | form closed: false
+CRS | 04 courses page text: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad Courses 23 Filter by role ​ ​ Add Course Owner A anatom
+  ✓  5 [chromium] › tests/courses-discovery.spec.ts:257:7 › Courses discovery - read only › 04 Add Course form: image input, tags, toggle (8.9s)
+
+  5 passed (1.1m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

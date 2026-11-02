@@ -1,0 +1,56 @@
+
+Running 5 tests using 1 worker
+
+  ✓  1 [setup] › tests/auth.setup.ts:10:6 › log in as faculty and save the session (4.2s)
+CRS2 | 01 page 1: 8 titles: ["anatomy5","anatomy4","Biochemistry","Pathology","Physiology","Anatomy-26","Pharmacology","ENT"]
+CRS2 | 01-list-view | url: https://peered.risetech.ai/faculty/courses
+CRS2 | 01 list view text: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad Courses 23 Filter by role ​ ​ Add Course anatomy5 2 1 3 Owner anatomy4 2 0 2 Owner B Biochemistry 1 0 0 Owner P Pathology 1 0 0 Owner P Physiology 1 0 0 Owner A Anatomy-26 1 3 0 Owner P Pharmacology 1 66 0 Owner E ENT 1 26 1 Owner 1 2 Archived 11 Powered by RISETech | © 2026 All rights reserved. List view
+CRS2 | 01 list view rows: 0; titles (h6): 0
+CRS2 | 01-page-2 | url: https://peered.risetech.ai/faculty/courses
+CRS2 | 01 page 2: 4 titles: ["Gynecology","Forensics","Anatomy-101","Clinical Medicine"]
+CRS2 | 01-archived-open | url: https://peered.risetech.ai/faculty/courses
+CRS2 | 01 after opening Archived: 16 titles: ["anatomy5","anatomy4","Biochemistry","Pathology","Physiology","Anatomy-26","Pharmacology","ENT","BNA","CNA","nn","Biotech","newwww","Test-4","Test-3","Test-2"]
+CRS2 | 01 text: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad Courses 23 Filter by role ​ ​ Add Course Owner A anatomy5 2 1 3 Owner A anatomy4 2 0 2 Owner B Biochemistry 1 0 0 Owner P Pathology 1 0 0 Owner P Physiology 1 0 0 Owner A Anatomy-26 1 3 0 Owner P Pharmacology 1 66 0 Owner E ENT 1 26 1 1 2 Archived 11 Owner B BNA 1 46 0 Owner C CNA 1 25 0 Owner N nn 1 25 0 Owner B Biotech 1 56 0 Owner N newwww 1 25 0 Owner T Test-4 1 0 2 Owner T Test-3 1 0 1 Owner T Test-2 1 1 1 1 2 Powered by RISETech | © 2026 All rights reserved.
+CRS2 | 01-card-menu | url: https://peered.risetech.ai/faculty/courses
+CRS2 | 01 card menu items: ["Archive Course\n\nHide from members","Delete Course\n\nCan't be undone"]
+  ✓  2 [chromium] › tests/courses-discovery.spec.ts:94:7 › Courses discovery round 2 - read only › 01 grid view, list view, page 2, Archived, card menu (15.2s)
+CRS2 | 02-filter-open | url: https://peered.risetech.ai/faculty/courses
+CRS2 | 02 filter options: ["Owner","Manager","Collaborator"]
+CRS2 | 02 filter "Owner": 8 courses; badges: ["Owner"]
+CRS2 | 02-filter-0 | url: https://peered.risetech.ai/faculty/courses
+CRS2 | 02 text: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad Courses 23 option Owner, selected. Owner ​ ​ Add Course Owner A anatomy5 2 1 3 Owner A anatomy4 2 0 2 Owner B Biochemistry 1 0 0 Owner P Pathology 1 0 0 Owner P Physiology 1 0 0 Owner A Anatomy-26 1 3 0 Owner P Pharmacology 1 66 0 Owne
+CRS2 | 02 filter "Manager": 1 courses; badges: [""]
+CRS2 | 02-filter-1 | url: https://peered.risetech.ai/faculty/courses
+CRS2 | 02 text: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad Courses 23 option Manager, selected. Manager ​ ​ Add Course No Managed Course Found Powered by RISETech | © 2026 All rights reserved.
+CRS2 | 02 filter "Collaborator": 1 courses; badges: [""]
+CRS2 | 02-filter-2 | url: https://peered.risetech.ai/faculty/courses
+CRS2 | 02 text: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad Courses 23 option Collaborator, selected. Collaborator ​ ​ Add Course No Shared Course Found Powered by RISETech | © 2026 All rights reserved.
+  ✓  3 [chromium] › tests/courses-discovery.spec.ts:148:7 › Courses discovery round 2 - read only › 02 Filter by role: every option (19.2s)
+CRS2 | 03-status-open | url: https://peered.risetech.ai/faculty/courses
+CRS2 | 03 Status options: ["Active","Archived"]
+CRS2 | 03 chips after one, two, two again, spaces: ["qa_one","qa_two",""]
+CRS2 | 03 chips after removing the first with its x: ["qa_two",""]
+CRS2 | 03 chips after Clear: []
+CRS2 | 03-after-close-with-text | url: https://peered.risetech.ai/faculty/courses
+CRS2 | 03 dialogs open after clicking X with text typed: 1
+CRS2 | 03 dialog text: Discard Changes? You have unsaved changes. Closing will discard them. Discard
+  ✓  4 [chromium] › tests/courses-discovery.spec.ts:189:7 › Courses discovery round 2 - read only › 03 Add Course form: Status list, tags, discard (9.0s)
+CRS2 | 04-faculty-select-all | url: https://peered.risetech.ai/faculty/courses
+CRS2 | 04 faculty counter after Select All: 11/11
+CRS2 | 04 form after Continue: Add Course Title * ​ Faculty Members Faculty 12 (Owner Included) Students Students 0 Course Image Click to upload or drag and drop Browse Tags (optional) ​ Status* Active Disable Student Activity Description (optional) ​ Save
+CRS2 | 04 faculty: tick Dr. Asad only FAILED: locator.check: Timeout 8000ms exceeded.
+CRS2 | 04 faculty search "Umar": Select Faculty ​ ​ Select All D Manager included 0/1 U Umar Ahmad Continue
+CRS2 | 04-faculty-search | url: https://peered.risetech.ai/faculty/courses
+CRS2 | 04 faculty search no match: Select Faculty ​ ​ No faculty available Continue
+CRS2 | 04 students counter after Select All: 24/24
+CRS2 | 04 form after Continue (students): Add Course Title * ​ Faculty Members Faculty 1 (Owner Included) Students Students F A M +21 24 Course Image Click to upload or drag and drop Browse Tags (optional) ​ Status* Active Disable Student Activity Description (optional) ​ Save
+CRS2 | 04 students search "Test": Select Students ​ ​ Select All 0/3 T Test Two T Test Three T Test One Continue
+CRS2 | 04-students-search | url: https://peered.risetech.ai/faculty/courses
+  ✓  5 [chromium] › tests/courses-discovery.spec.ts:253:7 › Courses discovery round 2 - read only › 04 pickers: Select All, search, counts (34.7s)
+
+  5 passed (1.4m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m
