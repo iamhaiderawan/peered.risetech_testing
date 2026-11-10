@@ -10,3 +10,10 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 explore_output/
+discovery/
+evidence/overview-discovery/
+
+
+discovery/
+evidence/overview-discovery/
+sample/**/enroll_WRONG_over_10MB.xlsx

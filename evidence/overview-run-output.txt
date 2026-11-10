@@ -1,0 +1,396 @@
+
+Running 39 tests using 1 worker
+
+  ✓   1 [setup] › tests/auth.setup.ts:11:6 › log in as faculty and save the session (3.2s)
+  ✓   2 [setup] › tests/auth.setup.ts:40:6 › log in as student and save the session (3.5s)
+OVERVIEW | baseline: {"courses":25,"archived":11}
+  ✓   3 [chromium] › tests/overview.spec.ts:488:5 › OVW-00: clean start (delete any leftover qa_course, create a fresh one) (14.4s)
+OVERVIEW | OVW-01 tiles: {"Students":0,"Faculty":1,"Student Questions":0,"Bank Questions":0,"Total Questions":0,"Tags":0,"Teams":0,"Contests":0,"Help Requests":0}
+OVERVIEW | OVW-01 View on "Student Questions" opened a page with /No Questions Found!/i
+OVERVIEW | OVW-01 View on "Bank Questions" opened a page with /No Questions Found!/i
+OVERVIEW | OVW-01 View on "Teams" opened a page with /Team/
+OVERVIEW | OVW-01 View on "Contests" opened a page with /No Contests Found!/i
+OVERVIEW | OVW-01 View on "Help Requests" opened a page with /No Help Requests Found!/i
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓   4 [chromium] › tests/overview.spec.ts:511:5 › OVW-01: overview tiles show the right numbers; edit icons and View links work (1.1m)
+NOTE | OVW-02: header "Questions" badge 0, Total Questions tile 0. The developer must confirm which number the badge should match (Total, Bank or Student Questions).
+OVERVIEW | OVW-02-enrol | message: ["Users Updated Successfully","1 Students"]
+OVERVIEW | OVW-02-remove | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓   5 [chromium] › tests/overview.spec.ts:587:5 › OVW-02: the header badges match the overview and follow changes (50.9s)
+OVERVIEW | OVW-03-enrol | message: ["Users Updated Successfully","2 Students","2"]
+OVERVIEW | OVW-03 All 24, Selected 2, Not Selected 22
+OVERVIEW | reset-students | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓   6 [chromium] › tests/overview.spec.ts:616:5 › OVW-03: Manage Students tabs All / Selected / Not Selected filter correctly (59.4s)
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓   7 [chromium] › tests/overview.spec.ts:653:5 › OVW-04: Manage Students search, rows per page and paging (30.8s)
+OVERVIEW | OVW-05-enrol | message: ["Users Updated Successfully","1 Students"]
+OVERVIEW | OVW-05-remove | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓   8 [chromium] › tests/overview.spec.ts:702:5 › OVW-05: ticking / unticking a student and pressing Update changes the enrolment (52.9s)
+OVERVIEW | OVW-06-enrol | message: ["Users Updated Successfully","1 Students"]
+OVERVIEW | downloaded qa_course_Students.xlsx
+OVERVIEW | OVW-06 qa_course_Students.xlsx: headers ["Name","Username","Email"], 1 data row(s)
+OVERVIEW | reset-students | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓   9 [chromium] › tests/overview.spec.ts:735:5 › OVW-06: Export Students downloads the enrolled students (59.5s)
+OVERVIEW | OVW-07 | message: ["Fetched Student Eligibility Data!","Enrollable (5)","Not Applicable (0)","Invalid (0)","Name\tUsername\tEmail","Muhammad Ali\tmali\tmali@gmail.com","David\tMIller\tmiller@gmail.com","Mohsin\tmohsin_283\tmohsin283@gmail.com","Sadia\t-\tsadia@gmail.com","Stone\tstone_ollay\tstone@gmail.com"]
+OVERVIEW | OVW-07-confirm | message: ["Enrollment Successful!","5 Students","5"]
+OVERVIEW | OVW-07 | enroll_students_CORRECT.xlsx | students 0 -> 5 | message: Fetched Student Eligibility Data! | Enrollable (5) | Not Applicable (0) | Invalid (0) | Name	Username	Email | Muhammad Ali	mali	mali@gmail.com | David	MIller	miller@gmail.com | Mohsin	mohsin_283	mohsin283@gmail.com | Sadia	-	sadia@gmail.com | Stone	stone_ollay	stone@gmail.com || after pressing "Enroll Students": Enrollment Successful! | 5 Students | 5
+OVERVIEW | reset-students | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  10 [chromium] › tests/overview.spec.ts:766:5 › OVW-07: Bulk Enroll with a correct XLSX enrols the students (58.6s)
+OVERVIEW | OVW-08a-csv | message: ["Fetched Student Eligibility Data!","Enrollable (5)","Not Applicable (0)","Invalid (0)","Name\tUsername\tEmail","Muhammad Ali\tmali\tmali@gmail.com","David\tMIller\tmiller@gmail.com","Mohsin\tmohsin_283\tmohsin283@gmail.com","Sadia\t-\tsadia@gmail.com","Stone\tstone_ollay\tstone@gmail.com"]
+OVERVIEW | OVW-08a-csv-confirm | message: ["Enrollment Successful!","5 Students","5"]
+OVERVIEW | OVW-08a-csv | enroll_students_CORRECT.csv | students 0 -> 5 | message: Fetched Student Eligibility Data! | Enrollable (5) | Not Applicable (0) | Invalid (0) | Name	Username	Email | Muhammad Ali	mali	mali@gmail.com | David	MIller	miller@gmail.com | Mohsin	mohsin_283	mohsin283@gmail.com | Sadia	-	sadia@gmail.com | Stone	stone_ollay	stone@gmail.com || after pressing "Enroll Students": Enrollment Successful! | 5 Students | 5
+OVERVIEW | reset-students | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  11 [chromium] › tests/overview.spec.ts:789:7 › OVW-08a-csv: Bulk Enroll accepts a correct .csv file and enrols the students (58.8s)
+OVERVIEW | OVW-08a-xls | message: ["Fetched Student Eligibility Data!","Enrollable (5)","Not Applicable (0)","Invalid (0)","Name\tUsername\tEmail","Muhammad Ali\tmali\tmali@gmail.com","David\tMIller\tmiller@gmail.com","Mohsin\tmohsin_283\tmohsin283@gmail.com","Sadia\t-\tsadia@gmail.com","Stone\tstone_ollay\tstone@gmail.com"]
+OVERVIEW | OVW-08a-xls-confirm | message: ["Enrollment Successful!","5 Students","5"]
+OVERVIEW | OVW-08a-xls | enroll_students_CORRECT.xls | students 0 -> 5 | message: Fetched Student Eligibility Data! | Enrollable (5) | Not Applicable (0) | Invalid (0) | Name	Username	Email | Muhammad Ali	mali	mali@gmail.com | David	MIller	miller@gmail.com | Mohsin	mohsin_283	mohsin283@gmail.com | Sadia	-	sadia@gmail.com | Stone	stone_ollay	stone@gmail.com || after pressing "Enroll Students": Enrollment Successful! | 5 Students | 5
+OVERVIEW | reset-students | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  12 [chromium] › tests/overview.spec.ts:789:7 › OVW-08a-xls: Bulk Enroll accepts a correct .xls file and enrols the students (58.9s)
+OVERVIEW | OVW-08b-no-email-column | message: ["Missing Required Column: Email Or Emails"]
+OVERVIEW | OVW-08b-no-email-column | enroll_WRONG_no_email_column.xlsx | students 0 -> 0 | message: Missing Required Column: Email Or Emails
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  13 [chromium] › tests/overview.spec.ts:832:7 › OVW-08b-no-email-column: Bulk Enroll refuses a file with no email column (30.8s)
+OVERVIEW | OVW-08b-headers-only | message: ["No Data Found In The File."]
+OVERVIEW | OVW-08b-headers-only | enroll_WRONG_headers_only.xlsx | students 0 -> 0 | message: No Data Found In The File.
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  14 [chromium] › tests/overview.spec.ts:832:7 › OVW-08b-headers-only: Bulk Enroll refuses a file with headers only (30.6s)
+OVERVIEW | OVW-08b-unknown-emails | message: ["Fetched Student Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (3)","No Enrollable Students Found","Download All","Enroll Students"]
+OVERVIEW | OVW-08b-unknown-emails | enroll_WRONG_unknown_emails.xlsx | students 0 -> 0 | message: Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (3) | No Enrollable Students Found | Download All | Enroll Students
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  15 [chromium] › tests/overview.spec.ts:832:7 › OVW-08b-unknown-emails: Bulk Enroll refuses a file with unknown emails (30.7s)
+OVERVIEW | OVW-08b-empty | message: ["No Data Found In The File."]
+OVERVIEW | OVW-08b-empty | enroll_WRONG_empty.xlsx | students 0 -> 0 | message: No Data Found In The File.
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  16 [chromium] › tests/overview.spec.ts:832:7 › OVW-08b-empty: Bulk Enroll refuses a file that is empty (30.5s)
+OVERVIEW | OVW-08b-over-10MB | message: ["Ignored 330000 Invalid Email(S).","Fetched Student Eligibility Data!","Enrollable (5)","Not Applicable (0)","Invalid (0)","Name\tUsername\tEmail","Muhammad Ali\tmali\tmali@gmail.com","David\tMIller\tmiller@gmail.com","Mohsin\tmohsin_283\tmohsin283@gmail.com","Sadia\t-\tsadia@gmail.com"]
+OVERVIEW | OVW-08b-over-10MB-confirm | message: ["Enrollment Successful!","5 Students","5"]
+OVERVIEW | OVW-08b-over-10MB | enroll_WRONG_over_10MB.xlsx | students 0 -> 5 | message: Ignored 330000 Invalid Email(S). | Fetched Student Eligibility Data! | Enrollable (5) | Not Applicable (0) | Invalid (0) | Name	Username	Email | Muhammad Ali	mali	mali@gmail.com | David	MIller	miller@gmail.com | Mohsin	mohsin_283	mohsin283@gmail.com | Sadia	-	sadia@gmail.com || after pressing "Enroll Students": Enrollment Successful! | 5 Students | 5
+OVERVIEW | reset-students | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✘  17 [chromium] › tests/overview.spec.ts:832:7 › OVW-08b-over-10MB: Bulk Enroll refuses a file over 10 MB (1.1m)
+OVERVIEW | OVW-08b-wrong-type | message: ["Invalid File Type."]
+OVERVIEW | OVW-08b-wrong-type | test-wrong-type.txt | students 0 -> 0 | message: Invalid File Type.
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  18 [chromium] › tests/overview.spec.ts:832:7 › OVW-08b-wrong-type: Bulk Enroll refuses a file of the wrong type (.txt) (30.9s)
+OVERVIEW | OVW-08c-mixed | message: ["Fetched Student Eligibility Data!","Enrollable (2)","Not Applicable (0)","Invalid (1)","Name\tUsername\tEmail","Muhammad Ali\tmali\tmali@gmail.com","Mohsin\tmohsin_283\tmohsin283@gmail.com","Download All","Download Enrollable","Enroll Students"]
+OVERVIEW | OVW-08c-mixed-confirm | message: ["Enrollment Successful!","2 Students","2"]
+OVERVIEW | OVW-08c-mixed | enroll_WRONG_mixed_real_and_unknown.xlsx | students 0 -> 2 | message: Fetched Student Eligibility Data! | Enrollable (2) | Not Applicable (0) | Invalid (1) | Name	Username	Email | Muhammad Ali	mali	mali@gmail.com | Mohsin	mohsin_283	mohsin283@gmail.com | Download All | Download Enrollable | Enroll Students || after pressing "Enroll Students": Enrollment Successful! | 2 Students | 2
+OVERVIEW | reset-students | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  19 [chromium] › tests/overview.spec.ts:868:7 › OVW-08c-mixed: Bulk Enroll reports the bad rows and saves only the valid ones (file with some real and some unknown emails) (55.0s)
+OVERVIEW | OVW-08c-bad-and-duplicate | message: ["Fetched Student Eligibility Data!","Some Duplicate Emails Were Removed.","Ignored 1 Invalid Email(S).","Enrollable (1)","Not Applicable (0)","Invalid (0)","Name\tUsername\tEmail","Mohsin\tmohsin_283\tmohsin283@gmail.com","Download All","Download Enrollable"]
+OVERVIEW | OVW-08c-bad-and-duplicate-confirm | message: ["Enrollment Successful!","1 Students"]
+OVERVIEW | OVW-08c-bad-and-duplicate | enroll_WRONG_bad_and_duplicate_emails.xlsx | students 0 -> 1 | message: Fetched Student Eligibility Data! | Some Duplicate Emails Were Removed. | Ignored 1 Invalid Email(S). | Enrollable (1) | Not Applicable (0) | Invalid (0) | Name	Username	Email | Mohsin	mohsin_283	mohsin283@gmail.com | Download All | Download Enrollable || after pressing "Enroll Students": Enrollment Successful! | 1 Students
+OVERVIEW | reset-students | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  20 [chromium] › tests/overview.spec.ts:868:7 › OVW-08c-bad-and-duplicate: Bulk Enroll reports the bad rows and saves only the valid ones (file with bad and duplicate emails) (53.4s)
+OVERVIEW | downloaded BulkEnrollStudentTemplate.xlsx
+OVERVIEW | OVW-09 students: BulkEnrollStudentTemplate.xlsx headers ["email"]; required on screen ["email"]
+OVERVIEW | downloaded BulkEnrollFacultyTemplate.xlsx
+OVERVIEW | OVW-09 faculty: BulkEnrollFacultyTemplate.xlsx headers ["email"]; required on screen ["email"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  21 [chromium] › tests/overview.spec.ts:889:5 › OVW-09: Download Template gives the required email column (31.8s)
+NOTE | OVW-10: Access toggle: 8 of 8 switches are greyed out. What it should do is unknown (question for the developer).
+OVERVIEW | OVW-10-add | message: ["Users Updated Successfully","2"]
+NOTE | OVW-10: after adding the second faculty, its Access switch is usable.
+OVERVIEW | OVW-10-remove | message: ["Users Updated Successfully","1"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  22 [chromium] › tests/overview.spec.ts:921:5 › OVW-10: Manage Faculty: owner locked, role labels, add and remove a faculty member (1.2m)
+OVERVIEW | OVW-10b-add | message: ["Users Updated Successfully","2"]
+OVERVIEW | OVW-10b-update | message: ["Users Updated Successfully"]
+NOTE | OVW-10b: the Senior Faculty switched off his own Access. Message: Users Updated Successfully. Manage Members button still visible: false.
+OVERVIEW | reset-faculty | message: ["Users Updated Successfully","1"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✘  23 [chromium] › tests/overview.spec.ts:990:5 › OVW-10b: a Senior Faculty cannot switch off his own Access (1.2m)
+OVERVIEW | downloaded qa_course_Faculty.xlsx
+OVERVIEW | OVW-11 qa_course_Faculty.xlsx: headers ["Name","Email","Role"], 1 data row(s)
+OVERVIEW | OVW-11b-correct | message: ["Fetched Faculty Eligibility Data!","Enrollable (4)","Not Applicable (0)","Invalid (0)","Name\tEmail","Amna Khan\tamna.k@nshs.nust.edu.pk","Faculty-1\tfaculty-1@gmail.com","Umar Ahmad\tfaculty_demo@gmail.com","Dr. Salman\ttutorial_demo@gmail.com","Download All"]
+OVERVIEW | OVW-11b-correct-confirm | message: ["Enrollment Successful!","5"]
+OVERVIEW | OVW-11b-correct | enroll_faculty_CORRECT.xlsx | faculty 1 -> 5 | message: Fetched Faculty Eligibility Data! | Enrollable (4) | Not Applicable (0) | Invalid (0) | Name	Email | Amna Khan	amna.k@nshs.nust.edu.pk | Faculty-1	faculty-1@gmail.com | Umar Ahmad	faculty_demo@gmail.com | Dr. Salman	tutorial_demo@gmail.com | Download All || after pressing "Enroll Faculty": Enrollment Successful! | 5
+OVERVIEW | reset-faculty | message: ["Users Updated Successfully","1"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+OVERVIEW | OVW-11c-no-email-column | message: ["Missing Required Column: Email Or Emails"]
+OVERVIEW | OVW-11c-no-email-column | enroll_faculty_WRONG_no_email_column.xlsx | faculty 1 -> 1 | message: Missing Required Column: Email Or Emails
+OVERVIEW | OVW-11c-unknown-emails | message: ["Fetched Faculty Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (2)","No Enrollable Faculty Found","Download All","Enroll Faculty"]
+OVERVIEW | OVW-11c-unknown-emails | enroll_faculty_WRONG_unknown_emails.xlsx | faculty 1 -> 1 | message: Fetched Faculty Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (2) | No Enrollable Faculty Found | Download All | Enroll Faculty
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  24 [chromium] › tests/overview.spec.ts:1037:5 › OVW-11: Faculty export and bulk enrol behave like the students' ones (1.9m)
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  25 [chromium] › tests/overview.spec.ts:1086:5 › OVW-12: the Manage Members menu opens the same Students / Faculty screens (27.5s)
+OVERVIEW | OVW-13-add | message: ["Course Tags Updated","2"]
+OVERVIEW | OVW-13-remove | message: ["Course Tags Updated"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  26 [chromium] › tests/overview.spec.ts:1111:5 › OVW-13: Edit Course Tags saves the tags and the Tags count follows (30.9s)
+OVERVIEW | OVW-14-save | message: ["Description Updated Successfully"]
+OVERVIEW | OVW-14-empty | message: ["Description Updated Successfully"]
+NOTE | OVW-14: saving an EMPTY description gives: "Description Updated Successfully"
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  27 [chromium] › tests/overview.spec.ts:1156:5 › OVW-14: Edit Description is saved and still there after refresh (28.2s)
+OVERVIEW | OVW-15-xlsx | message: ["5.0 KB — click to replace","5","Questions Detected","6","Participants","Analysis ready. Click Download Analysis to export the Excel report.","Download Analysis"]
+OVERVIEW | OVW-15-xlsx | posthoc_CORRECT.xlsx | message: 5.0 KB — click to replace | 5 | Questions Detected | 6 | Participants | Analysis ready. Click Download Analysis to export the Excel report. | Download Analysis
+OVERVIEW | OVW-15-xlsx what the page shows: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad Q qa_course Switch Course Active Student Activity: Enabled JOIN CODE: 98LXBNJ7RY Watch Guide 0 Students 0 Questions Manage Members Overview Resources Question Bank Student Questions Contests Teams Leaderboard Help Requests Course Overview Edit Description Post Hoc Analysis Students 0 Faculty 1 Student Questions 0 View Bank Questions 0 View Total Questions 0 Tags 1 Teams 0 View Contests 0 View Help Requests 0 View Powered by RISETech | © 2026 All rights reserved. Post Hoc Analysis Quick Tour Template Format • Row 1: Headers — S.No
+OVERVIEW | OVW-15-xls | message: ["6.5 KB — click to replace","5","Questions Detected","6","Participants","Analysis ready. Click Download Analysis to export the Excel report.","Download Analysis"]
+OVERVIEW | OVW-15-xls | posthoc_CORRECT.xls | message: 6.5 KB — click to replace | 5 | Questions Detected | 6 | Participants | Analysis ready. Click Download Analysis to export the Excel report. | Download Analysis
+OVERVIEW | OVW-15-xls what the page shows: PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad Q qa_course Switch Course Active Student Activity: Enabled JOIN CODE: 98LXBNJ7RY Watch Guide 0 Students 0 Questions Manage Members Overview Resources Question Bank Student Questions Contests Teams Leaderboard Help Requests Course Overview Edit Description Post Hoc Analysis Students 0 Faculty 1 Student Questions 0 View Bank Questions 0 View Total Questions 0 Tags 1 Teams 0 View Contests 0 View Help Requests 0 View Powered by RISETech | © 2026 All rights reserved. Post Hoc Analysis Quick Tour Template Format • Row 1: Headers — S.No
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  28 [chromium] › tests/overview.spec.ts:1212:5 › OVW-15: Post Hoc Analysis with a correct Excel file shows an analysis (38.9s)
+OVERVIEW | OVW-16-no-question-columns | message: ["No Question Data Found In The Uploaded File."]
+OVERVIEW | OVW-16-no-question-columns | posthoc_WRONG_no_question_columns.xlsx | message: No Question Data Found In The Uploaded File.
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  29 [chromium] › tests/overview.spec.ts:1255:7 › OVW-16-no-question-columns: Post Hoc Analysis gives an error for a file with no question columns (25.5s)
+OVERVIEW | OVW-16-no-student-rows | message: ["No Question Data Found In The Uploaded File."]
+OVERVIEW | OVW-16-no-student-rows | posthoc_WRONG_no_student_rows.xlsx | message: No Question Data Found In The Uploaded File.
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  30 [chromium] › tests/overview.spec.ts:1255:7 › OVW-16-no-student-rows: Post Hoc Analysis gives an error for a file with no student rows (25.6s)
+OVERVIEW | OVW-16-no-key-row | message: ["5.0 KB — click to replace","5","Questions Detected","Participants","Analysis ready. Click Download Analysis to export the Excel report.","Download Analysis"]
+OVERVIEW | OVW-16-no-key-row | posthoc_WRONG_no_key_row.xlsx | message: 5.0 KB — click to replace | 5 | Questions Detected | Participants | Analysis ready. Click Download Analysis to export the Excel report. | Download Analysis
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✘  31 [chromium] › tests/overview.spec.ts:1255:7 › OVW-16-no-key-row: Post Hoc Analysis gives an error for a file with no answer-key row (26.9s)
+OVERVIEW | OVW-16-empty | message: ["No Question Data Found In The Uploaded File."]
+OVERVIEW | OVW-16-empty | posthoc_WRONG_empty.xlsx | message: No Question Data Found In The Uploaded File.
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  32 [chromium] › tests/overview.spec.ts:1255:7 › OVW-16-empty: Post Hoc Analysis gives an error for a file that is empty (25.7s)
+OVERVIEW | OVW-16-type-csv | message: ["0.2 KB — click to replace","5","Questions Detected","6","Participants","Analysis ready. Click Download Analysis to export the Excel report.","Download Analysis"]
+OVERVIEW | OVW-16-type-csv | posthoc_WRONG_type.csv | message: 0.2 KB — click to replace | 5 | Questions Detected | 6 | Participants | Analysis ready. Click Download Analysis to export the Excel report. | Download Analysis
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✘  33 [chromium] › tests/overview.spec.ts:1255:7 › OVW-16-type-csv: Post Hoc Analysis gives an error for a file of the wrong type (.csv) (26.8s)
+OVERVIEW | OVW-16-type-txt | message: ["No Question Data Found In The Uploaded File."]
+OVERVIEW | OVW-16-type-txt | test-wrong-type.txt | message: No Question Data Found In The Uploaded File.
+NOTE | OVW-16: a .txt file gives "No Question Data Found In The Uploaded File." instead of a wrong-file-type message.
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  34 [chromium] › tests/overview.spec.ts:1255:7 › OVW-16-type-txt: Post Hoc Analysis gives an error for a file of the wrong type (.txt) (25.9s)
+OVERVIEW | OVW-17-enrol | message: ["Users Updated Successfully","1 Students"]
+OVERVIEW | OVW-17-archive | message: ["Course Archived Successfully"]
+OVERVIEW | OVW-17-activate | message: ["Course Activated Successfully"]
+OVERVIEW | reset-students | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  35 [chromium] › tests/overview.spec.ts:1278:5 › OVW-17: an archived course is hidden from the student; Active brings it back (1.3m)
+OVERVIEW | OVW-18-enrol | message: ["Users Updated Successfully","1 Students"]
+OVERVIEW | OVW-18 Enabled: the student's click on qa_course ends on /student/dashboard
+OVERVIEW | OVW-18-disable | message: ["Student Activity Disabled Successfully","Student Activity: Disabled"]
+NOTE | OVW-18 (blocked): with Student Activity Disabled, the student opening qa_course goes to /student/dashboard. Read-only could not be checked. Page text: PeerEd Courses Dashboard Questions OSCE 0 Muhammad Ali M Student Dashboard Quick Tour Courses Enrolled: 4 Available: 16 My Questions 0 Attempt Questions Answered: 0 Unanswered: 0 My Rank #1 Level 1 My Team Not Assigned Contests 0 0% Question Accuracy 0 0 COGNITIVE LEVEL Recall(c1) 0% Application(c2) 0% Analysis(c3) 0% Resources No Resources Found! Powered by RISETech | © 2026 All rights reserved.
+OVERVIEW | OVW-18-enable | message: ["Student Activity Enabled Successfully","Student Activity: Enabled"]
+OVERVIEW | reset-students | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✘  36 [chromium] › tests/overview.spec.ts:1308:5 › OVW-18: Student Activity Enabled to Disabled and back (1.5m)
+NOTE | OVW-19: the student sees qa_course under "Available to Join" without being invited.
+OVERVIEW | OVW-19b-wrong-code | message: ["Invalid enrollment code.","Attempts used","4 left"]
+OVERVIEW | OVW-19 attempts left after one wrong code: 4
+OVERVIEW | OVW-19b-right-code | message: ["Joined Course Successfully"]
+OVERVIEW | reset-students | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  37 [chromium] › tests/overview.spec.ts:1380:5 › OVW-19: the join code can be copied and a student joins with it (1.3m)
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  38 [chromium] › tests/overview.spec.ts:1459:5 › OVW-20: Watch Guide opens the video and it can be closed (22.9s)
+CLEANUP | deleted "qa_course"
+OVERVIEW | after clean-up: {"courses":25,"archived":11}
+  ✓  39 [chromium] › tests/overview.spec.ts:1498:5 › OVW-99: delete qa_course, then the course numbers are back to the start (13.9s)
+
+
+  1) [chromium] › tests/overview.spec.ts:832:7 › OVW-08b-over-10MB: Bulk Enroll refuses a file over 10 MB 
+
+    Error: enroll_WRONG_over_10MB.xlsx: students were enrolled from a wrong file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 5
+
+      839 |       expect
+      840 |         .soft(r.after, `${name}: students were enrolled from a wrong file`)
+    > 841 |         .toBe(r.before);
+          |          ^
+      842 |     } finally {
+      843 |       await closeDialogs(page);
+      844 |       await resetCourse(page);
+        at /home/haider/Documents/risetech/peered-tests/tests/overview.spec.ts:841:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/overview-OVW-08b-over-10MB-2cb18-l-refuses-a-file-over-10-MB-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/overview-OVW-08b-over-10MB-2cb18-l-refuses-a-file-over-10-MB-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/overview-OVW-08b-over-10MB-2cb18-l-refuses-a-file-over-10-MB-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overview-OVW-08b-over-10MB-2cb18-l-refuses-a-file-over-10-MB-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overview-OVW-08b-over-10MB-2cb18-l-refuses-a-file-over-10-MB-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/overview.spec.ts:990:5 › OVW-10b: a Senior Faculty cannot switch off his own Access 
+
+    Error: a faculty member can switch off his own Access
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1027 |       );
+      1028 |     }
+    > 1029 |     expect(locked, "a faculty member can switch off his own Access").toBe(true);
+           |                                                                      ^
+      1030 |   } finally {
+      1031 |     await f2?.context.close();
+      1032 |     await closeDialogs(page);
+        at /home/haider/Documents/risetech/peered-tests/tests/overview.spec.ts:1029:70
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/overview-OVW-10b-a-Senior--09738-t-switch-off-his-own-Access-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/overview-OVW-10b-a-Senior--09738-t-switch-off-his-own-Access-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/overview-OVW-10b-a-Senior--09738-t-switch-off-his-own-Access-chromium/test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/overview-OVW-10b-a-Senior--09738-t-switch-off-his-own-Access-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overview-OVW-10b-a-Senior--09738-t-switch-off-his-own-Access-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overview-OVW-10b-a-Senior--09738-t-switch-off-his-own-Access-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/overview.spec.ts:1255:7 › OVW-16-no-key-row: Post Hoc Analysis gives an error for a file with no answer-key row 
+
+    Error: posthoc_WRONG_no_key_row.xlsx: a wrong file was accepted ("Analysis ready")
+
+    expect(received).not.toContain(expected) // indexOf
+
+    Expected substring: not "Analysis ready"
+    Received string:        "5.0 KB — click to replace | 5 | Questions Detected | Participants | Analysis ready. Click Download Analysis to export the Excel report. | Download Analysis"
+
+      1264 |       expect
+      1265 |         .soft(r.msg, `${name}: a wrong file was accepted ("Analysis ready")`)
+    > 1266 |         .not.toContain("Analysis ready");
+           |              ^
+      1267 |       if (id === "type-txt" && /No Question Data Found/i.test(r.msg))
+      1268 |         note(
+      1269 |           `OVW-16: a .txt file gives "${r.msg}" instead of a wrong-file-type message.`,
+        at /home/haider/Documents/risetech/peered-tests/tests/overview.spec.ts:1266:14
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/overview-OVW-16-no-key-row-c6cb3-file-with-no-answer-key-row-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/overview-OVW-16-no-key-row-c6cb3-file-with-no-answer-key-row-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/overview-OVW-16-no-key-row-c6cb3-file-with-no-answer-key-row-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overview-OVW-16-no-key-row-c6cb3-file-with-no-answer-key-row-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overview-OVW-16-no-key-row-c6cb3-file-with-no-answer-key-row-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/overview.spec.ts:1255:7 › OVW-16-type-csv: Post Hoc Analysis gives an error for a file of the wrong type (.csv) 
+
+    Error: posthoc_WRONG_type.csv: a wrong file was accepted ("Analysis ready")
+
+    expect(received).not.toContain(expected) // indexOf
+
+    Expected substring: not "Analysis ready"
+    Received string:        "0.2 KB — click to replace | 5 | Questions Detected | 6 | Participants | Analysis ready. Click Download Analysis to export the Excel report. | Download Analysis"
+
+      1264 |       expect
+      1265 |         .soft(r.msg, `${name}: a wrong file was accepted ("Analysis ready")`)
+    > 1266 |         .not.toContain("Analysis ready");
+           |              ^
+      1267 |       if (id === "type-txt" && /No Question Data Found/i.test(r.msg))
+      1268 |         note(
+      1269 |           `OVW-16: a .txt file gives "${r.msg}" instead of a wrong-file-type message.`,
+        at /home/haider/Documents/risetech/peered-tests/tests/overview.spec.ts:1266:14
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/overview-OVW-16-type-csv-P-48fc9-file-of-the-wrong-type-csv--chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/overview-OVW-16-type-csv-P-48fc9-file-of-the-wrong-type-csv--chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/overview-OVW-16-type-csv-P-48fc9-file-of-the-wrong-type-csv--chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overview-OVW-16-type-csv-P-48fc9-file-of-the-wrong-type-csv--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overview-OVW-16-type-csv-P-48fc9-file-of-the-wrong-type-csv--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/overview.spec.ts:1308:5 › OVW-18: Student Activity Enabled to Disabled and back 
+
+    Error: the enrolled course did not open (the student is back on the dashboard)
+
+    expect(received).not.toMatch(expected)
+
+    Expected pattern: not /\/student\/dashboard/
+    Received string:      "/student/dashboard"
+
+      1334 |         "the enrolled course did not open (the student is back on the dashboard)",
+      1335 |       )
+    > 1336 |       .not.toMatch(/\/student\/dashboard/);
+           |            ^
+      1337 |
+      1338 |     // b) Student Activity DISABLED on the faculty side.
+      1339 |     await openCourse(page);
+        at /home/haider/Documents/risetech/peered-tests/tests/overview.spec.ts:1336:12
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/overview-OVW-18-Student-Ac-2df25-nabled-to-Disabled-and-back-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/overview-OVW-18-Student-Ac-2df25-nabled-to-Disabled-and-back-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/overview-OVW-18-Student-Ac-2df25-nabled-to-Disabled-and-back-chromium/test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/overview-OVW-18-Student-Ac-2df25-nabled-to-Disabled-and-back-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overview-OVW-18-Student-Ac-2df25-nabled-to-Disabled-and-back-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overview-OVW-18-Student-Ac-2df25-nabled-to-Disabled-and-back-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [chromium] › tests/overview.spec.ts:832:7 › OVW-08b-over-10MB: Bulk Enroll refuses a file over 10 MB 
+    [chromium] › tests/overview.spec.ts:990:5 › OVW-10b: a Senior Faculty cannot switch off his own Access 
+    [chromium] › tests/overview.spec.ts:1255:7 › OVW-16-no-key-row: Post Hoc Analysis gives an error for a file with no answer-key row 
+    [chromium] › tests/overview.spec.ts:1255:7 › OVW-16-type-csv: Post Hoc Analysis gives an error for a file of the wrong type (.csv) 
+    [chromium] › tests/overview.spec.ts:1308:5 › OVW-18: Student Activity Enabled to Disabled and back 
+  34 passed (28.7m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m
