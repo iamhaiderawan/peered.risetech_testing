@@ -1,0 +1,2 @@
+PeerEd QA sample text file.
+If you can read this after download, the file is intact.

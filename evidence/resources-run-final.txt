@@ -1,0 +1,1017 @@
+
+Running 55 tests using 1 worker
+
+  ✓   1 [setup] › tests/auth.setup.ts:11:6 › log in as faculty and save the session (5.4s)
+  ✓   2 [setup] › tests/auth.setup.ts:40:6 › log in as student and save the session (7.0s)
+  ✓   3 [setup] › tests/auth.setup.ts:69:6 › log in as junior faculty and save the session (5.7s)
+RES | CLEANUP | deleted course "qa_res_empty"
+RES | starting folders: {"qa_course_1":16,"f2":0}
+  ✓   4 [chromium] › tests/resources.spec.ts:589:5 › RES-00: clean start (delete any qa_res_ leftover, note the starting folders) (24.1s)
+RES | RES-01 | folders: []
+RES | RES-01 | page text: "PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad Q qa_res_empty Switch Course Active Student Activity: Enabled JOIN CODE: QUB2MYWPL8 Watch Guide 0 Students 0 Questions Manage Members Overview Resources Question Bank Student Questions Contests Teams Leaderboard Help Requests Resources Add Folder No Resources Found! Powered by RISETech | © 2026 All rights reserved."
+RES | CLEANUP | deleted course "qa_res_empty"
+  ✓   5 [chromium] › tests/resources.spec.ts:603:5 › RES-01: a course with no folders shows the empty message (27.8s)
+RES | RES-02 | message: ["Saving...","Folder Added Successfully","3","qa_res_ok"]
+RES | RES-02 | message: Saving... | Folder Added Successfully | 3 | qa_res_ok
+  ✓   6 [chromium] › tests/resources.spec.ts:644:5 › RES-02: Add Folder with a valid name; it is still there after a refresh (19.9s)
+RES | RES-03a-empty | message: ["Folder Name is required"]
+RES | RES-03a | empty | message: Folder Name is required
+RES | RES-03a-spaces | message: ["Folder Name is required"]
+RES | RES-03a | spaces | message: Folder Name is required
+  ✓   7 [chromium] › tests/resources.spec.ts:663:7 › RES-03: Add Folder, wrong and odd names › RES-03a: empty name and a name of only spaces are blocked (22.3s)
+RES | RES-03b-first | message: ["Saving...","Folder Added Successfully","4","qa_res_dup"]
+RES | RES-03b-second | message: ["Folder With This Name Already Exists"]
+RES | RES-03b | message for the second one: Folder With This Name Already Exists
+  ✓   8 [chromium] › tests/resources.spec.ts:688:7 › RES-03: Add Folder, wrong and odd names › RES-03b: a second folder with the same name is refused (22.6s)
+RES | RES-03c | typed 150 characters; the box holds 30; maxlength: 30
+RES | RES-03c | message: ["Saving...","Folder Added Successfully","5","qa_res_xxxxxxxxxxxxxxxxxxxxxxx"]
+RES | RES-03c | saved as: ["qa_res_xxxxxxxxxxxxxxxxxxxxxxx"] | length 30
+NOTE | the name box keeps only 30 of the 150 characters typed (maxlength 30)
+  ✓   9 [chromium] › tests/resources.spec.ts:706:7 › RES-03: Add Folder, wrong and odd names › RES-03c: a very long name is kept as typed and the page does not break (20.3s)
+RES | RES-03d | message: ["Saving...","Folder Added Successfully","6","qa_res_<b>&\"'%$#@!"]
+RES | RES-03d | the folder shows: "qa_res_<b>&\"'%$#@!"
+  ✓  10 [chromium] › tests/resources.spec.ts:753:7 › RES-03: Add Folder, wrong and odd names › RES-03d: special characters are shown as typed, not as code (13.0s)
+RES | RES-03e | message: ["Saving...","Folder Added Successfully","7","qa_res_lead"]
+RES | RES-03e | saved as: ["qa_res_lead"]
+  ✓  11 [chromium] › tests/resources.spec.ts:766:7 › RES-03: Add Folder, wrong and odd names › RES-03e: spaces at the start of a name are removed (14.2s)
+RES | RES-04-add | message: ["Saving...","Folder Added Successfully","8","qa_res_menu"]
+RES | RES-04 | menu items: ["Rename Folder Change its name","Delete Folder Removes all its items"]
+RES | RES-04 | rename pop-up: "Edit Folder Folder Name * ​ Update"
+RES | RES-04-rename | message: ["Updating...","Folder Renamed Successfully","qa_res_menu2"]
+RES | RES-04 | rename message: Updating... | Folder Renamed Successfully | qa_res_menu2
+RES | RES-04-file | message: ["Saving...","File Added Successfully","1","qa_res_gone","PDF","Unknown","—","1.4 KB","Select all","qa1"]
+RES | delete question for "qa_res_menu2": "Delete Folder This action cannot be undone. Delete"
+RES | folder-deleted | message: ["Deleting...","Folder And All Its Files Deleted Successfully","7"]
+RES | CLEANUP | deleted folder "qa_res_menu2"
+RES | RES-04 | delete message: Deleting... | Folder And All Its Files Deleted Successfully | 7
+RES | RES-04-again | message: ["Saving...","Folder Added Successfully","8","qa_res_menu2"]
+  ✓  12 [chromium] › tests/resources.spec.ts:781:5 › RES-04: folder menu has Rename and Delete; both work; Delete removes the files inside (53.5s)
+RES | RES-04b-add-a | message: ["Saving...","Folder Added Successfully","9","qa_res_a"]
+RES | RES-04b-add-b | message: ["Saving...","10","qa_res_b"]
+RES | RES-04b-rename | message: ["Updating...","Folder Renamed Successfully"]
+RES | RES-04b | message: Updating... | Folder Renamed Successfully
+RES | RES-04b | folders named qa_res_a after the rename: 2
+RES | delete question for "qa_res_a": "Delete Folder This action cannot be undone. Delete"
+RES | folder-deleted | message: ["Deleting...","Folder And All Its Files Deleted Successfully","8"]
+RES | CLEANUP | deleted folder "qa_res_a"
+RES | RES-04b | folders named qa_res_a left after deleting one: 0
+  ✘  13 [chromium] › tests/resources.spec.ts:851:5 › RES-04b (extra test): renaming a folder to a name that already exists is refused (38.2s)
+RES | RES-05-add | message: ["Saving...","Folder Added Successfully","9","qa_res_empty_folder"]
+RES | RES-05 | everything on the page: ["PeerEd","Dashboard","Courses","My Banks","Review Questions","OSCE","Dr. Asad","qa_course","Switch Course","Active","Student Activity: Enabled","JOIN CODE:","ZWFECTKXBV","Watch Guide","1 Students","0 Questions","Manage Members","Overview","Resources","Question Bank","Student Questions","Contests","Teams","Leaderboard","Help Requests","Resources","9","qa_res_empty_folder","​","​","Add File","No Resource Found!","Powered by RISETech  |  © 2026 All rights reserved."]
+RES | RES-05 | empty message lines: ["No Resource Found!"]
+  ✓  14 [chromium] › tests/resources.spec.ts:891:5 › RES-05: an empty folder shows an empty message (19.2s)
+RES | files-folder-add | message: ["Saving...","Folder Added Successfully","10","qa_res_files"]
+RES | RES-06-qa_doc_sample.pdf | message: ["Saving...","File Added Successfully","1","qa_res_qa_doc_sample_pdf","PDF","Unknown","—","1.4 KB","Select all","qa1"]
+RES | RES-06 | qa_doc_sample.pdf | message: Saving... | File Added Successfully | 1 | qa_res_qa_doc_sample_pdf | PDF | Unknown | — | 1.4 KB | Select all | qa1
+RES | RES-06 | qa_doc_sample.pdf | the row reads: "qa_res_qa_doc_sample_pdf PDF Unknown — 1.4 KB"
+  ✓  15 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_doc_sample.pdf (25.7s)
+RES | RES-06-qa_doc_sample.docx | message: ["Saving...","File Added Successfully","2","qa_res_qa_doc_sample_docx","DOCX","35.8 KB"]
+RES | RES-06 | qa_doc_sample.docx | message: Saving... | File Added Successfully | 2 | qa_res_qa_doc_sample_docx | DOCX | 35.8 KB
+RES | RES-06 | qa_doc_sample.docx | the row reads: "qa_res_qa_doc_sample_docx DOCX Unknown — 35.8 KB"
+  ✓  16 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_doc_sample.docx (19.9s)
+RES | RES-06-qa_doc_sample.doc | message: ["Saving...","File Added Successfully","3","qa_res_qa_doc_sample_doc","DOC","18.0 KB"]
+RES | RES-06 | qa_doc_sample.doc | message: Saving... | File Added Successfully | 3 | qa_res_qa_doc_sample_doc | DOC | 18.0 KB
+RES | RES-06 | qa_doc_sample.doc | the row reads: "qa_res_qa_doc_sample_doc DOC Unknown — 18.0 KB"
+  ✓  17 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_doc_sample.doc (21.0s)
+RES | RES-06-qa_slides_sample.pptx | message: ["Saving...","File Added Successfully","4","qa_res_qa_slides_sample_pptx","PPTX","27.6 KB"]
+RES | RES-06 | qa_slides_sample.pptx | message: Saving... | File Added Successfully | 4 | qa_res_qa_slides_sample_pptx | PPTX | 27.6 KB
+RES | RES-06 | qa_slides_sample.pptx | the row reads: "qa_res_qa_slides_sample_pptx PPTX Unknown — 27.6 KB"
+  ✓  18 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_slides_sample.pptx (20.3s)
+RES | RES-06-qa_slides_sample.ppt | message: ["Saving..."]
+RES | RES-06 | qa_slides_sample.ppt | message: Saving...
+RES | RES-06 | qa_slides_sample.ppt | the row reads: "qa_res_qa_slides_sample_ppt PPT Unknown — 633.0 KB"
+  ✓  19 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_slides_sample.ppt (28.0s)
+RES | RES-06-qa_sheet_sample.xlsx | message: ["Saving...","File Added Successfully","6","qa_res_qa_sheet_sample_xlsx","XLSX","4.8 KB"]
+RES | RES-06 | qa_sheet_sample.xlsx | message: Saving... | File Added Successfully | 6 | qa_res_qa_sheet_sample_xlsx | XLSX | 4.8 KB
+RES | RES-06 | qa_sheet_sample.xlsx | the row reads: "qa_res_qa_sheet_sample_xlsx XLSX Unknown — 4.8 KB"
+  ✓  20 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_sheet_sample.xlsx (20.9s)
+RES | RES-06-qa_sheet_sample.xls | message: ["Saving...","File Added Successfully","7","qa_res_qa_sheet_sample_xls","XLS","5.5 KB"]
+RES | RES-06 | qa_sheet_sample.xls | message: Saving... | File Added Successfully | 7 | qa_res_qa_sheet_sample_xls | XLS | 5.5 KB
+RES | RES-06 | qa_sheet_sample.xls | the row reads: "qa_res_qa_sheet_sample_xls XLS Unknown — 5.5 KB"
+  ✓  21 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_sheet_sample.xls (20.3s)
+RES | RES-06-qa_image_sample.png | message: ["Saving...","File Added Successfully","8","qa_res_qa_image_sample_png","PNG","2.9 KB"]
+RES | RES-06 | qa_image_sample.png | message: Saving... | File Added Successfully | 8 | qa_res_qa_image_sample_png | PNG | 2.9 KB
+RES | RES-06 | qa_image_sample.png | the row reads: "qa_res_qa_image_sample_png PNG Unknown — 2.9 KB"
+  ✓  22 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_image_sample.png (20.6s)
+RES | RES-06-qa_image_sample.jpg | message: ["Saving...","File Added Successfully","9","qa_res_qa_image_sample_jpg","JPG"]
+RES | RES-06 | qa_image_sample.jpg | message: Saving... | File Added Successfully | 9 | qa_res_qa_image_sample_jpg | JPG
+RES | RES-06 | qa_image_sample.jpg | the row reads: "qa_res_qa_image_sample_jpg JPG Unknown — 5.5 KB"
+  ✓  23 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_image_sample.jpg (20.3s)
+RES | RES-06-qa_audio_sample.mp3 | message: ["Saving...","File Added Successfully","qa_res_qa_audio_sample_mp3","MP3","23.9 KB"]
+RES | RES-06 | qa_audio_sample.mp3 | message: Saving... | File Added Successfully | qa_res_qa_audio_sample_mp3 | MP3 | 23.9 KB
+RES | RES-06 | qa_audio_sample.mp3 | the row reads: "qa_res_qa_audio_sample_mp3 MP3 Unknown — 23.9 KB"
+  ✓  24 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_audio_sample.mp3 (20.1s)
+RES | RES-06-qa_audio_sample.wav | message: ["Saving..."]
+RES | RES-06 | qa_audio_sample.wav | message: Saving...
+RES | RES-06 | qa_audio_sample.wav | the row reads: "qa_res_qa_audio_sample_wav WAV Unknown — 258.5 KB"
+  ✓  25 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_audio_sample.wav (28.1s)
+RES | RES-06-qa_video_sample.mp4 | message: ["Saving...","File Added Successfully","12","qa_res_qa_video_sample_mp4","MP4","38.8 KB"]
+RES | RES-06 | qa_video_sample.mp4 | message: Saving... | File Added Successfully | 12 | qa_res_qa_video_sample_mp4 | MP4 | 38.8 KB
+RES | RES-06 | qa_video_sample.mp4 | the row reads: "qa_res_qa_video_sample_mp4 MP4 Unknown — 38.8 KB"
+  ✓  26 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_video_sample.mp4 (20.4s)
+RES | RES-06-qa_archive_sample.zip | message: ["Saving...","File Added Successfully","13","qa_res_qa_archive_sample_zip","ZIP","147 B"]
+RES | RES-06 | qa_archive_sample.zip | message: Saving... | File Added Successfully | 13 | qa_res_qa_archive_sample_zip | ZIP | 147 B
+RES | RES-06 | qa_archive_sample.zip | the row reads: "qa_res_qa_archive_sample_zip ZIP Unknown — 147 B"
+  ✓  27 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_archive_sample.zip (20.4s)
+RES | RES-06-qa_text_sample.txt | message: ["Saving...","File Added Successfully","14","qa_res_qa_text_sample_txt","TXT","85 B"]
+RES | RES-06 | qa_text_sample.txt | message: Saving... | File Added Successfully | 14 | qa_res_qa_text_sample_txt | TXT | 85 B
+RES | RES-06 | qa_text_sample.txt | the row reads: "qa_res_qa_text_sample_txt TXT Unknown — 85 B"
+  ✓  28 [chromium] › tests/resources.spec.ts:928:9 › RES-06: Add File, every kind of file uploads and shows its size › RES-06: qa_text_sample.txt (20.2s)
+RES | RES-06-qa_res_odd_spaces | message: ["Saving...","File Added Successfully","15","qa_res_odd_spaces","PDF","1.4 KB"]
+RES | RES-06-qa_res_odd_long | message: ["Saving...","File Added Successfully","16","qa_res_odd_long"]
+  ✓  29 [chromium] › tests/resources.spec.ts:948:7 › RES-06: Add File, every kind of file uploads and shows its size › RES-06 odd names: spaces, brackets, an accent, a very long file name (38.4s)
+RES | RES-06b | the form accepts: .pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.jpg,.jpeg,.png,.webp,.mp4,.mov,.avi,.mkv,.mp3,.wav,.aac,.ogg,.zip,.rar,.7z,.txt
+RES | RES-06b | the form text says: "Add File Click to upload or drag & drop Supports PDF, DOC, PPT, Excel, Images, Audio, Video, ZIP, TXT Resource Name * ​ Category qa_res_files Tags (optional) Select tags Description (optional) ​ Save"
+NOTE | .csv is NOT in the accept list of the Add File form; the form text says "Supports PDF, DOC, PPT, Excel, Images, Audio, Video, ZIP, TXT"
+RES | RES-06b-.webp | message: ["Saving...","File Added Successfully","17","qa_res_extra_webp","WEBP","2.0 KB"]
+RES | RES-06b | .webp | accepted: true
+RES | RES-06b-.mov | message: ["Saving...","File Added Successfully","18","qa_res_extra_mov","MOV"]
+RES | RES-06b | .mov | accepted: true
+RES | RES-06b-.avi | message: ["Saving...","File Added Successfully","19","qa_res_extra_avi","AVI"]
+RES | RES-06b | .avi | accepted: true
+RES | RES-06b-.mkv | message: ["Saving...","File Added Successfully","20","qa_res_extra_mkv","MKV"]
+RES | RES-06b | .mkv | accepted: true
+RES | RES-06b-.aac | message: ["Saving...","File Added Successfully","21","qa_res_extra_aac","AAC","3"]
+RES | RES-06b | .aac | accepted: true
+RES | RES-06b-.ogg | message: ["Saving...","File Added Successfully","22","qa_res_extra_ogg","OGG"]
+RES | RES-06b | .ogg | accepted: true
+RES | RES-06b-.rar | message: ["Saving...","File Added Successfully","23","qa_res_extra_rar","RAR"]
+RES | RES-06b | .rar | accepted: true
+RES | RES-06b-.7z | message: ["Saving...","File Added Successfully","24","qa_res_extra_7z","7Z"]
+RES | RES-06b | .7z | accepted: true
+RES | RES-06b-csv | message: ["Saving...","File Added Successfully","25","qa_res_csv","CSV","35 B"]
+RES | RES-06b | csv put straight into the field | saved: true | message: Saving... | File Added Successfully | 25 | qa_res_csv | CSV | 35 B
+NOTE | .csv put straight into the field: accepted
+  ✓  30 [chromium] › tests/resources.spec.ts:973:5 › RES-06b (extra test): the other types the form allows are accepted; .csv is not offered (2.7m)
+RES | RES-07a | message: []
+RES | RES-07a | message: 
+  ✓  31 [chromium] › tests/resources.spec.ts:1053:7 › RES-07: Add File with no name or no file is blocked › RES-07a: a name but no file (39.8s)
+RES | RES-07b | the name box after choosing a file holds: ""
+RES | RES-07b | message: ["Resource Name is required"]
+RES | RES-07b | message: Resource Name is required
+  ✓  32 [chromium] › tests/resources.spec.ts:1072:7 › RES-07: Add File with no name or no file is blocked › RES-07b: a file but no name (39.7s)
+RES | RES-07c | message: ["Resource Name is required"]
+RES | RES-07c | message: Resource Name is required
+  ✓  33 [chromium] › tests/resources.spec.ts:1099:7 › RES-07: Add File with no name or no file is blocked › RES-07c: nothing filled in (38.5s)
+RES | RES-08a | message: ["Saving...","File Added Successfully","26","qa_res_wrong_08a"]
+RES | RES-08a | WRONG_text_renamed_to_pdf.pdf | saved: true | message: Saving... | File Added Successfully | 26 | qa_res_wrong_08a
+  ✘  34 [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08a: WRONG_text_renamed_to_pdf.pdf (39.9s)
+RES | RES-08b | message: ["Saving...","File Added Successfully","27","qa_res_wrong_08b","PNG"]
+RES | RES-08b | WRONG_text_renamed_to_png.png | saved: true | message: Saving... | File Added Successfully | 27 | qa_res_wrong_08b | PNG
+  ✘  35 [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08b: WRONG_text_renamed_to_png.png (40.5s)
+RES | RES-08c | message: ["Saving...","File Added Successfully","28","qa_res_wrong_08c","XYZ","34 B"]
+RES | RES-08c | WRONG_unsupported_type.xyz | saved: true | message: Saving... | File Added Successfully | 28 | qa_res_wrong_08c | XYZ | 34 B
+  ✘  36 [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08c: WRONG_unsupported_type.xyz (40.6s)
+RES | RES-08d | message: ["Saving...","File Added Successfully","29","qa_res_wrong_08d","EXE","44 B"]
+RES | RES-08d | WRONG_unsupported_type.exe | saved: true | message: Saving... | File Added Successfully | 29 | qa_res_wrong_08d | EXE | 44 B
+  ✘  37 [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08d: WRONG_unsupported_type.exe (40.5s)
+RES | RES-08e | message: ["Saving...","File Added Successfully","30","qa_res_wrong_08e","0"]
+RES | RES-08e | WRONG_empty_file.pdf | saved: true | message: Saving... | File Added Successfully | 30 | qa_res_wrong_08e | 0
+  ✘  38 [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08e: WRONG_empty_file.pdf (40.3s)
+NOTE | the screen states no size limit; a 120 MB file was tried
+RES | RES-08f | after 2 s | form open: true | new lines: ["Saving..."]
+RES | RES-08f | after 4 s | form open: true | new lines: ["Saving..."]
+RES | RES-08f | after 6 s | form open: true | new lines: ["Saving..."]
+RES | RES-08f | after 8 s | form open: true | new lines: ["Saving..."]
+RES | RES-08f | after 10 s | form open: true | new lines: ["Saving..."]
+RES | RES-08f | after 15 s | form open: true | new lines: ["Saving...","File Save Failed"]
+RES | RES-08f | files before 30, after 30 | accepted: false
+  ✘  39 [chromium] › tests/resources.spec.ts:1154:7 › RES-08: wrong files are rejected with a message › RES-08f: a very large file (54.1s)
+RES | RES-08h-1mb | after 2 s | form open: true | new lines: ["Saving..."]
+RES | RES-08h-1mb | after 7 s | form open: false | new lines: ["Saving...","File Added Successfully","31","qa_res_size_1mb","1.0 MB","4"]
+RES | RES-08h-1mb | files before 30, after 31 | accepted: true
+RES | RES-08h-5mb | after 2 s | form open: true | new lines: ["Saving..."]
+RES | RES-08h-5mb | after 7 s | form open: false | new lines: ["Saving...","File Added Successfully"]
+RES | RES-08h-5mb | files before 31, after 32 | accepted: true
+RES | RES-08h-10mb | after 2 s | form open: true | new lines: ["Saving..."]
+RES | RES-08h-10mb | after 4 s | form open: true | new lines: ["Saving..."]
+RES | RES-08h-10mb | after 9 s | form open: false | new lines: ["Saving...","File Added Successfully","33","qa_res_size_10mb","10.0 MB"]
+RES | RES-08h-10mb | files before 32, after 33 | accepted: true
+RES | RES-08h-15mb | after 2 s | form open: true | new lines: ["Saving..."]
+RES | RES-08h-15mb | after 4 s | form open: true | new lines: ["Saving..."]
+RES | RES-08h-15mb | after 9 s | form open: false | new lines: ["Saving...","File Added Successfully","34","qa_res_size_15mb","15.0 MB"]
+RES | RES-08h-15mb | files before 33, after 34 | accepted: true
+RES | RES-08h | table:
+1 MB: accepted (Saving... | File Added Successfully | 31 | qa_res_size_1mb | 1.0 MB | 4)
+5 MB: accepted (Saving... | File Added Successfully)
+10 MB: accepted (Saving... | File Added Successfully | 33 | qa_res_size_10mb | 10.0 MB)
+15 MB: accepted (Saving... | File Added Successfully | 34 | qa_res_size_15mb | 15.0 MB)
+NOTE | largest size accepted: 15 MB; first size refused: none MB (the screen states no limit; the refusal message is "File Save Failed")
+  ✓  40 [chromium] › tests/resources.spec.ts:1230:5 › RES-08h (extra test): find the largest file the site accepts (2.8m)
+RES | RES-08g | the form after the drop: "Add File WRONG_dragged.exe Supports PDF, DOC, PPT, Excel, Images, Audio, Video, ZIP, TXT Resource Name * ​ Category qa_res_files Tags (optional) Select tags Description (optional) ​ Save"
+RES | RES-08g | message: ["Saving...","File Added Successfully","35","qa_res_wrong_08g","25 B"]
+RES | RES-08g | saved: true | message: Saving... | File Added Successfully | 35 | qa_res_wrong_08g | 25 B
+  ✘  41 [chromium] › tests/resources.spec.ts:1265:5 › RES-08g (extra test): a .exe file dragged onto the upload area is rejected (42.4s)
+RES | RES-09 | message: ["Saving...","File Added Successfully","36","qa_res_meta","1.4 KB"]
+RES | RES-09 | the row reads: "qa_res_meta PDF Unknown — 1.4 KB"
+NOTE | the description is NOT shown in the file list
+RES | RES-09 | edit form text: "Edit File 1794814322867-9721abc3-77bd-42cf-a18c-aef96aaedb87-qa_doc_sample.pdf?GoogleAccessId=431197112273-compute%40developer.gserviceaccount.com&Expires=2082672000&Signature=aAcKddfLZ7nr%2BJoA8sYlNEvJqUMbmrvIBOtRQ50ZwgfCDYhbvOnMTKGCN4OP3pr09%2F4U8Hj8Wkfr1LDomlmh%2BoetW98zuzywOzMLevRQKRm6TZE5%2FSt3sIstiTJmntmwwklvOlIEFpjMs30avM6NtrK3wJVTbBMeEMEGTySUCWEnQJQF7mrt28IMlWoN2J%2FCAqjRaEOlUqGaCCfCwHBcW3GOoyly1Iix%2FpsVeNkpOw4q4yOyZPm2Mdufo1D4IyYIrueQq7KSB6vC1PHtlg5RHS3%2FqhGxafzcww%2Buzy4I4B%2FXxN%2B%"
+  ✓  42 [chromium] › tests/resources.spec.ts:1332:5 › RES-09: tags, category and description are saved and still there after a refresh (31.9s)
+RES | RES-10 | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad2bbcd5de137dc5ecf1"]
+  ✘  43 [chromium] › tests/resources.spec.ts:1379:5 › RES-10: a downloaded file is identical to the original (24.4s)
+RES | RES-10b-qa_doc_sample.pdf | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad2bbcd5de137dc5ecf1"]
+RES | RES-10b-qa_doc_sample.docx | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad3fbcd5de137dc5ecf2"]
+RES | RES-10b-qa_doc_sample.doc | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad54bcd5de137dc5ecf3"]
+RES | RES-10b-qa_slides_sample.pptx | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad68bcd5de137dc5ecf4"]
+RES | RES-10b-qa_slides_sample.ppt | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad85bcd5de137dc5ecf5"]
+RES | RES-10b-qa_sheet_sample.xlsx | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad99bcd5de137dc5ecf6"]
+RES | RES-10b-qa_sheet_sample.xls | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaadaebcd5de137dc5ecf7"]
+RES | RES-10b-qa_image_sample.png | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaadc2bcd5de137dc5ecf8"]
+RES | RES-10b-qa_image_sample.jpg | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaadd7bcd5de137dc5ecf9"]
+RES | RES-10b-qa_audio_sample.mp3 | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaadebbcd5de137dc5ecfa"]
+RES | RES-10b-qa_audio_sample.wav | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaae07bcd5de137dc5ecfb"]
+RES | RES-10b-qa_video_sample.mp4 | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaae1bbcd5de137dc5ecfc"]
+RES | RES-10b-qa_archive_sample.zip | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaae30bcd5de137dc5ecfd"]
+RES | RES-10b-qa_text_sample.txt | download: NO file | messages: ["Failed To Download File","Download"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaae44bcd5de137dc5ecfe"]
+RES | RES-10b | table:
+qa_doc_sample.pdf: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad2bbcd5de137dc5ecf1
+qa_doc_sample.docx: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad3fbcd5de137dc5ecf2
+qa_doc_sample.doc: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad54bcd5de137dc5ecf3
+qa_slides_sample.pptx: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad68bcd5de137dc5ecf4
+qa_slides_sample.ppt: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad85bcd5de137dc5ecf5
+qa_sheet_sample.xlsx: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad99bcd5de137dc5ecf6
+qa_sheet_sample.xls: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaadaebcd5de137dc5ecf7
+qa_image_sample.png: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaadc2bcd5de137dc5ecf8
+qa_image_sample.jpg: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaadd7bcd5de137dc5ecf9
+qa_audio_sample.mp3: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaadebbcd5de137dc5ecfa
+qa_audio_sample.wav: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaae07bcd5de137dc5ecfb
+qa_video_sample.mp4: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaae1bbcd5de137dc5ecfc
+qa_archive_sample.zip: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaae30bcd5de137dc5ecfd
+qa_text_sample.txt: FAILED 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaae44bcd5de137dc5ecfe
+  ✘  44 [chromium] › tests/resources.spec.ts:1393:5 › RES-10b (extra test): download one file of each type (4.7m)
+RES | ensure-qa_doc_sample.pdf | message: ["Saving...","File Added Successfully","37","qa_res_edit","PDF","Unknown","—","1.4 KB"]
+RES | RES-11a | message: ["Updating...","File Updated Successfully","qa_res_edit2"]
+RES | RES-11a | message: Updating... | File Updated Successfully | qa_res_edit2
+  ✓  45 [chromium] › tests/resources.spec.ts:1414:5 › RES-11a: Edit changes the name and the description (37.9s)
+RES | ensure-qa_doc_sample.pdf | message: ["Saving...","File Added Successfully","38","qa_res_edit_b","PDF","Unknown","—","1.4 KB"]
+RES | RES-11b | edit form text: "Edit File 1794814712462-dee49bfe-af86-4def-8129-800c6b5b2396-qa_doc_sample.pdf?GoogleAccessId=431197112273-compute%40developer.gserviceaccount.com&Expires=2082672000&Signature=LUOKP5Df2rWzfkkCFPBJcaaDrE4ihQxzuA3rmv%2FB4ry7Gyo1c67mUtU%2FhdT%2BKFEeeW%2FZHT4e9zruHVpYO6T7MqETYJy4RK0NLZlEAxW6zqV4F9i%2F95Xkkjb82HVOtRnBGJtBvIwM6PQVQNFGyF9ldZgaroCh1HDMLE0usdClBbrt4tYPvHHbQ%2BLmYEFXs9VQy%2BJIIbE6xXBORxW33oCyzzIPiE864lxZD7E0A7lLXxfuzTT0nEG9WtWBrlDGSloKhcTzhNbGK%2Fgv0DpSMlUb7X72PPApMtJIBNsAdqDUKzJoCeFdYLzWVtnLvho5hwtMCgcCfyKakWMe5bBlJm733Q%3D%3D Supports PDF, DOC, PPT, Excel, Images, Audio, Video, ZIP, T"
+RES | RES-11b | tag remove buttons are named: ["Remove [object Object]"]
+  ✘  46 [chromium] › tests/resources.spec.ts:1450:5 › RES-11b (extra test): the Edit form shows the file name, not a web link; tag chips have a proper name (24.5s)
+RES | ensure-qa_doc_sample.pdf | message: ["Saving...","File Added Successfully","39","qa_res_del","PDF","Unknown","—","1.4 KB"]
+RES | RES-11c | confirmation shown: true | it says: "Delete File This action cannot be undone. Delete"
+RES | RES-11c | message: ["Deleting...","File Deleted Successfully","38","No Resource Found!"]
+RES | RES-11c | message: Deleting... | File Deleted Successfully | 38 | No Resource Found!
+  ✓  47 [chromium] › tests/resources.spec.ts:1483:5 › RES-11c: Delete asks for confirmation, then removes the file (48.5s)
+RES | RES-12-alpha | message: ["Saving...","File Added Successfully","39","qa_res_alpha"]
+RES | RES-12-beta | message: ["Saving...","40","qa_res_beta"]
+RES | RES-12 | folder search for qa_res_files shows: ["qa_res_files"]
+RES | RES-12 | folder search with no match shows: "PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad qa_course Switch Course Active Student Activity: Enabled JOIN CODE: ZWFECTKXBV Watch Guide 1 Students 0 Questions Manage Members Overview Resources Question Bank Student Questions Contests Teams Leaderboard Help Requests Resources 10 ​ ​ Add Folder No Resources Found! Powered by RISETech | © 2026 All rights reserved."
+  ✓  48 [chromium] › tests/resources.spec.ts:1521:5 › RES-12: search by title, by description, no match; folder search (41.0s)
+RES | RES-12b | search in capital letters finds: 1
+RES | RES-12b | with the qa1 filter: beta (tagged) shown 1, alpha (not tagged) shown 0
+RES | RES-12b | page after picking qa1: "PeerEd Dashboard Courses My Banks Review Questions OSCE Dr. Asad qa_course Switch Course Active Student Activity: Enabled JOIN CODE: ZWFECTKXBV Watch Guide 1 Students 0 Questions Manage Members Overview Resources Question Bank Student Questions Contests Teams Leaderboard Help Requests Resources 10 qa_res_files 40 ​ ​ Add File Clear all qa1 qa2 qa_res_beta PDF Unknown — 1.4 KB qa_res_edit_b PDF Unknown — 1.4 KB qa_res_meta PDF Unknown — 1.4 KB Powered by RISETech | © 2026 All rights reserved."
+NOTE | after a tag is picked, the text 'Select all' is no longer on the screen (see the page text printed above)
+RES | RES-12b | alpha shown after the tag is pressed again: 1
+  ✓  49 [chromium] › tests/resources.spec.ts:1575:5 › RES-12b (extra test): search ignores capital letters; the tag filter shows only tagged files (20.9s)
+RES | RES-14 | qa_course_1: badge 16, page 1 has 10, page 2 has 6
+RES | RES-14-add | message: ["Saving...","File Added Successfully","41","qa_res_count","5"]
+  ✓  50 [chromium] › tests/resources.spec.ts:1637:5 › RES-14 (extra test): the file count on a folder matches the files inside and changes with add and delete (1.1m)
+RES | RES-15 | folders named qa_res_dbl: 1
+RES | RES-15 | files named qa_res_dblf: 1
+  ✓  51 [chromium] › tests/resources.spec.ts:1682:5 › RES-15 (extra test): a double-click on Save makes only one folder and one file (35.6s)
+RES | ensure-qa_doc_sample.pdf | message: ["Saving...","File Added Successfully","42","qa_res_student","PDF","Unknown","—","1.4 KB"]
+RES | student | address after opening the course: https://dev-peer-learning-platform-frontend-431197112273.europe-west1.run.app/student/dashboard
+RES | RES-13 | the student sees: "PeerEd Courses Dashboard Questions OSCE 0 Muhammad Ali M Student Dashboard Quick Tour Courses Enrolled: 4 Available: 8 My Questions 0 Attempt Questions Answered: 0 Unanswered: 0 My Rank #1 Level 1 My Team Not Assigned Contests 0 0% Question Accuracy 0 0 COGNITIVE LEVEL Recall(c1) 0% Application(c2) 0% Analysis(c3) 0% Resources 11 qa_res_files 42 ​ ​ Select all qa1 qa2 qa_res_student PDF Unknown — 1.4 KB Download qa_res_dblf PDF Unknown — 1.4 KB Download qa_res_beta PDF Unknown — 1.4 KB Download qa_res_alpha PDF Unknown — 1.4 KB Download qa_res_edit_b PDF Unknown — 1.4 KB Download qa_res_edit2 PDF Unknown — 1.4 KB Download qa_res_meta PDF Unknown — 1.4 KB Download qa_res_wrong_08g EXE Unknown"
+NOTE | the description is NOT shown to the student
+RES | RES-13-download | download: NO file | messages: ["Downloading...","Failed To Download File"] | failed requests: ["500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afab3e9bcd5de137dc5ed1d"]
+  ✘  52 [chromium] › tests/resources.spec.ts:1723:5 › RES-13: a student can see and download a resource (1.5m)
+RES | student | address after opening the course: https://dev-peer-learning-platform-frontend-431197112273.europe-west1.run.app/student/dashboard
+RES | RES-13b | tools the student sees inside the folder: {"addFolder":0,"folderMenu":0,"addFile":0,"edit":0,"delete":0}
+RES | RES-13b | the student asked for the faculty address and ended on: https://dev-peer-learning-platform-frontend-431197112273.europe-west1.run.app/student/dashboard
+  ✓  53 [chromium] › tests/resources.spec.ts:1762:5 › RES-13b (extra test): a student has no Add, Edit or Delete tools (1.4m)
+RES | junior-added | message: ["Updating...","Users Updated Successfully"]
+RES | RES-13c | the junior's address: https://dev-peer-learning-platform-frontend-431197112273.europe-west1.run.app/faculty/courses/6af55f1c1d34b3a65edffbee?tab=resources
+RES | RES-13c | the junior sees: "PeerEd Dashboard Courses Private Bank OSCE Faculty-1 F qa_course Switch Course Active Student Activity: Enabled JOIN CODE: ZWFECTKXBV Watch Guide 1 Students 0 Questions Overview Resources Question Bank Student Questions Contests Teams Leaderboard Help Requests Resources 11 ​ ​ qa_course_1 16 f2 qa_res_ok qa_res_dup qa_res_xxxxxxxxxxxxxxxxxxxxxxx qa_res_<b>&\"'%$#@! qa_res_lead qa_res_menu2 qa_res_empty_folder qa_res_files 42 qa_res_dbl Powered by RISETech | © 2026 All rights reserved."
+RES | RES-13c | folders the junior sees: ["qa_course_1","f2","qa_res_ok","qa_res_dup","qa_res_xxxxxxxxxxxxxxxxxxxxxxx","qa_res_<b>&\"'%$#@!","qa_res_lead","qa_res_menu2","qa_res_empty_folder","qa_res_files","qa_res_dbl"]
+RES | RES-13c | tools on the folder list: {"addFolder":0,"folderMenu":0,"addFile":0,"edit":0,"delete":0}
+RES | RES-13c | tools inside the folder: {"addFolder":0,"folderMenu":0,"addFile":0,"edit":0,"delete":0}
+NOTE | the junior's download is not tested here: download is broken for everyone (RES-10)
+RES | junior-removed | message: ["Updating...","Users Updated Successfully"]
+  ✓  54 [chromium] › tests/resources.spec.ts:1810:5 › RES-13c (extra test): a junior faculty can see the folders and files but has no Add, Edit or Delete (1.2m)
+RES | delete question for "qa_res_ok": "Delete Folder This action cannot be undone. Delete"
+RES | folder-deleted | message: ["Deleting...","Folder And All Its Files Deleted Successfully","10"]
+RES | CLEANUP | deleted folder "qa_res_ok"
+RES | delete question for "qa_res_dup": "Delete Folder This action cannot be undone. Delete"
+RES | folder-deleted | message: ["Deleting...","Folder And All Its Files Deleted Successfully","9"]
+RES | CLEANUP | deleted folder "qa_res_dup"
+RES | delete question for "qa_res_xxxxxxxxxxxxxxxxxxxxxxx": "Delete Folder This action cannot be undone. Delete"
+RES | folder-deleted | message: ["Deleting...","Folder And All Its Files Deleted Successfully","8"]
+RES | CLEANUP | deleted folder "qa_res_xxxxxxxxxxxxxxxxxxxxxxx"
+RES | delete question for "qa_res_<b>&"'%$#@!": "Delete Folder This action cannot be undone. Delete"
+RES | folder-deleted | message: ["Deleting...","Folder And All Its Files Deleted Successfully","7"]
+RES | CLEANUP | deleted folder "qa_res_<b>&"'%$#@!"
+RES | delete question for "qa_res_lead": "Delete Folder This action cannot be undone. Delete"
+RES | folder-deleted | message: ["Deleting...","Folder And All Its Files Deleted Successfully","6"]
+RES | CLEANUP | deleted folder "qa_res_lead"
+RES | delete question for "qa_res_menu2": "Delete Folder This action cannot be undone. Delete"
+RES | folder-deleted | message: ["Deleting...","Folder And All Its Files Deleted Successfully","5"]
+RES | CLEANUP | deleted folder "qa_res_menu2"
+RES | delete question for "qa_res_empty_folder": "Delete Folder This action cannot be undone. Delete"
+RES | folder-deleted | message: ["Deleting...","Folder And All Its Files Deleted Successfully","4"]
+RES | CLEANUP | deleted folder "qa_res_empty_folder"
+RES | delete question for "qa_res_files": "Delete Folder This action cannot be undone. Delete"
+RES | folder-deleted | message: ["Deleting...","Folder And All Its Files Deleted Successfully","3"]
+RES | CLEANUP | deleted folder "qa_res_files"
+RES | delete question for "qa_res_dbl": "Delete Folder This action cannot be undone. Delete"
+RES | folder-deleted | message: ["Deleting...","Folder And All Its Files Deleted Successfully","2"]
+RES | CLEANUP | deleted folder "qa_res_dbl"
+RES | RES-99 | folders left: {"qa_course_1":16,"f2":0}
+NOTE | only qa_res_ things were deleted; qa_course_1 stays
+  ✓  55 [chromium] › tests/resources.spec.ts:1873:5 › RES-99: delete everything the tests made; the folders are back to the start (1.7m)
+
+
+  1) [chromium] › tests/resources.spec.ts:851:5 › RES-04b (extra test): renaming a folder to a name that already exists is refused 
+
+    Error: folders named qa_res_a (a duplicate rename is accepted)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 2
+
+      873 |   expect
+      874 |     .soft(two, "folders named qa_res_a (a duplicate rename is accepted)")
+    > 875 |     .toBe(1);
+          |      ^
+      876 |
+      877 |   if (two > 1) {
+      878 |     // when both exist: deleting one should remove only one
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:875:6
+
+    Error: deleting one of two same-named folders left
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      885 |     say("RES-04b | folders named qa_res_a left after deleting one:", left);
+      886 |     await saveEvidence(page, "RES-04b-after-delete");
+    > 887 |     expect.soft(left, "deleting one of two same-named folders left").toBe(1);
+          |                                                                      ^
+      888 |   }
+      889 | });
+      890 |
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:887:70
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-04b-extra-te-4764f-t-already-exists-is-refused-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/resources-RES-04b-extra-te-4764f-t-already-exists-is-refused-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/resources-RES-04b-extra-te-4764f-t-already-exists-is-refused-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/resources-RES-04b-extra-te-4764f-t-already-exists-is-refused-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/resources-RES-04b-extra-te-4764f-t-already-exists-is-refused-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08a: WRONG_text_renamed_to_pdf.pdf 
+
+    Error: files in the folder (the file was ACCEPTED; message: Saving... | File Added Successfully | 26 | qa_res_wrong_08a)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 25
+    Received: 26
+
+      1148 |         after,
+      1149 |         `files in the folder (the file was ${saved ? "ACCEPTED" : "refused"}; message: ${msg})`,
+    > 1150 |       ).toBe(before);
+           |         ^
+      1151 |     });
+      1152 |   }
+      1153 |
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1150:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-977e6-ONG-text-renamed-to-pdf-pdf-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-977e6-ONG-text-renamed-to-pdf-pdf-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/resources-RES-08-wrong-fil-977e6-ONG-text-renamed-to-pdf-pdf-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-977e6-ONG-text-renamed-to-pdf-pdf-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/resources-RES-08-wrong-fil-977e6-ONG-text-renamed-to-pdf-pdf-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08b: WRONG_text_renamed_to_png.png 
+
+    Error: files in the folder (the file was ACCEPTED; message: Saving... | File Added Successfully | 27 | qa_res_wrong_08b | PNG)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 26
+    Received: 27
+
+      1148 |         after,
+      1149 |         `files in the folder (the file was ${saved ? "ACCEPTED" : "refused"}; message: ${msg})`,
+    > 1150 |       ).toBe(before);
+           |         ^
+      1151 |     });
+      1152 |   }
+      1153 |
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1150:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-a5bc9-ONG-text-renamed-to-png-png-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-a5bc9-ONG-text-renamed-to-png-png-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/resources-RES-08-wrong-fil-a5bc9-ONG-text-renamed-to-png-png-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-a5bc9-ONG-text-renamed-to-png-png-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/resources-RES-08-wrong-fil-a5bc9-ONG-text-renamed-to-png-png-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08c: WRONG_unsupported_type.xyz 
+
+    Error: files in the folder (the file was ACCEPTED; message: Saving... | File Added Successfully | 28 | qa_res_wrong_08c | XYZ | 34 B)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 27
+    Received: 28
+
+      1148 |         after,
+      1149 |         `files in the folder (the file was ${saved ? "ACCEPTED" : "refused"}; message: ${msg})`,
+    > 1150 |       ).toBe(before);
+           |         ^
+      1151 |     });
+      1152 |   }
+      1153 |
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1150:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-bf3e5--WRONG-unsupported-type-xyz-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-bf3e5--WRONG-unsupported-type-xyz-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/resources-RES-08-wrong-fil-bf3e5--WRONG-unsupported-type-xyz-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-bf3e5--WRONG-unsupported-type-xyz-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/resources-RES-08-wrong-fil-bf3e5--WRONG-unsupported-type-xyz-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08d: WRONG_unsupported_type.exe 
+
+    Error: files in the folder (the file was ACCEPTED; message: Saving... | File Added Successfully | 29 | qa_res_wrong_08d | EXE | 44 B)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 28
+    Received: 29
+
+      1148 |         after,
+      1149 |         `files in the folder (the file was ${saved ? "ACCEPTED" : "refused"}; message: ${msg})`,
+    > 1150 |       ).toBe(before);
+           |         ^
+      1151 |     });
+      1152 |   }
+      1153 |
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1150:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-5fc65--WRONG-unsupported-type-exe-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-5fc65--WRONG-unsupported-type-exe-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/resources-RES-08-wrong-fil-5fc65--WRONG-unsupported-type-exe-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-5fc65--WRONG-unsupported-type-exe-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/resources-RES-08-wrong-fil-5fc65--WRONG-unsupported-type-exe-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08e: WRONG_empty_file.pdf 
+
+    Error: files in the folder (the file was ACCEPTED; message: Saving... | File Added Successfully | 30 | qa_res_wrong_08e | 0)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 29
+    Received: 30
+
+      1148 |         after,
+      1149 |         `files in the folder (the file was ${saved ? "ACCEPTED" : "refused"}; message: ${msg})`,
+    > 1150 |       ).toBe(before);
+           |         ^
+      1151 |     });
+      1152 |   }
+      1153 |
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1150:9
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-50fc7-ES-08e-WRONG-empty-file-pdf-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-50fc7-ES-08e-WRONG-empty-file-pdf-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/resources-RES-08-wrong-fil-50fc7-ES-08e-WRONG-empty-file-pdf-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-50fc7-ES-08e-WRONG-empty-file-pdf-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/resources-RES-08-wrong-fil-50fc7-ES-08e-WRONG-empty-file-pdf-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chromium] › tests/resources.spec.ts:1154:7 › RES-08: wrong files are rejected with a message › RES-08f: a very large file 
+
+    Error: the message does not say why (size). Messages: Saving... | File Save Failed
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1171 |         `the message does not say why (size). Messages: ${r.messages}`,
+      1172 |       )
+    > 1173 |       .toBe(true);
+           |        ^
+      1174 |   });
+      1175 | });
+      1176 |
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1173:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-aa556-e-RES-08f-a-very-large-file-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-aa556-e-RES-08f-a-very-large-file-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/resources-RES-08-wrong-fil-aa556-e-RES-08f-a-very-large-file-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/resources-RES-08-wrong-fil-aa556-e-RES-08f-a-very-large-file-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/resources-RES-08-wrong-fil-aa556-e-RES-08f-a-very-large-file-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [chromium] › tests/resources.spec.ts:1265:5 › RES-08g (extra test): a .exe file dragged onto the upload area is rejected 
+
+    Error: files in the folder (the dragged .exe was ACCEPTED)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 34
+    Received: 35
+
+      1325 |     after,
+      1326 |     `files in the folder (the dragged .exe was ${saved ? "ACCEPTED" : "refused"})`,
+    > 1327 |   ).toBe(before);
+           |     ^
+      1328 | });
+      1329 |
+      1330 | // ---------- RES-09: tags, category, description ----------
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1327:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-08g-extra-te-a87ab-the-upload-area-is-rejected-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/resources-RES-08g-extra-te-a87ab-the-upload-area-is-rejected-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/resources-RES-08g-extra-te-a87ab-the-upload-area-is-rejected-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/resources-RES-08g-extra-te-a87ab-the-upload-area-is-rejected-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/resources-RES-08g-extra-te-a87ab-the-upload-area-is-rejected-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [chromium] › tests/resources.spec.ts:1379:5 › RES-10: a downloaded file is identical to the original 
+
+    Error: the file did not download. Messages: Failed To Download File | Download. Failed requests: 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afaad2bbcd5de137dc5ecf1
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1387 |     r.ok,
+      1388 |     `the file did not download. Messages: ${r.messages.join(" | ")}. Failed requests: ${r.bad.join(" | ")}`,
+    > 1389 |   ).toBe(true);
+           |     ^
+      1390 |   expect(sha(r.file!)).toBe(sha(sample(f)));
+      1391 | });
+      1392 |
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1389:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-10-a-downloa-a998d-s-identical-to-the-original-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/resources-RES-10-a-downloa-a998d-s-identical-to-the-original-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/resources-RES-10-a-downloa-a998d-s-identical-to-the-original-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/resources-RES-10-a-downloa-a998d-s-identical-to-the-original-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/resources-RES-10-a-downloa-a998d-s-identical-to-the-original-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [chromium] › tests/resources.spec.ts:1393:5 › RES-10b (extra test): download one file of each type 
+
+    Error: qa_doc_sample.pdf did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_doc_sample.docx did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_doc_sample.doc did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_slides_sample.pptx did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_slides_sample.ppt did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_sheet_sample.xlsx did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_sheet_sample.xls did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_image_sample.png did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_image_sample.jpg did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_audio_sample.mp3 did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_audio_sample.wav did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_video_sample.mp4 did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_archive_sample.zip did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    Error: qa_text_sample.txt did not download as an identical file
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1405 |     expect
+      1406 |       .soft(r.ok && same, `${f} did not download as an identical file`)
+    > 1407 |       .toBe(true);
+           |        ^
+      1408 |   }
+      1409 |   say("RES-10b | table:\n" + results.join("\n"));
+      1410 | });
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1407:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-10b-extra-test-download-one-file-of-each-type-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/resources-RES-10b-extra-test-download-one-file-of-each-type-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/resources-RES-10b-extra-test-download-one-file-of-each-type-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/resources-RES-10b-extra-test-download-one-file-of-each-type-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/resources-RES-10b-extra-test-download-one-file-of-each-type-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [chromium] › tests/resources.spec.ts:1450:5 › RES-11b (extra test): the Edit form shows the file name, not a web link; tag chips have a proper name 
+
+    Error: the Edit form shows a storage web link instead of the file name
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      1472 |       "the Edit form shows a storage web link instead of the file name",
+      1473 |     )
+    > 1474 |     .toBe(false);
+           |      ^
+      1475 |   expect
+      1476 |     .soft(
+      1477 |       chipLabels.some((l) => l.includes("[object Object]")),
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1474:6
+
+    Error: a tag button is named ["Remove [object Object]"]
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: false
+    Received: true
+
+      1478 |       `a tag button is named ${JSON.stringify(chipLabels)}`,
+      1479 |     )
+    > 1480 |     .toBe(false);
+           |      ^
+      1481 | });
+      1482 |
+      1483 | test("RES-11c: Delete asks for confirmation, then removes the file", async ({
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1480:6
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-11b-extra-te-c1b0d-ag-chips-have-a-proper-name-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/resources-RES-11b-extra-te-c1b0d-ag-chips-have-a-proper-name-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/resources-RES-11b-extra-te-c1b0d-ag-chips-have-a-proper-name-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/resources-RES-11b-extra-te-c1b0d-ag-chips-have-a-proper-name-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/resources-RES-11b-extra-te-c1b0d-ag-chips-have-a-proper-name-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [chromium] › tests/resources.spec.ts:1723:5 › RES-13: a student can see and download a resource 
+
+    Error: the student's download failed. Messages: Downloading... | Failed To Download File. Failed requests: 500 GET https://dev-peer-learning-platform-nodejs-431197112273.europe-west1.run.app/api/v1/resources/download/6afab3e9bcd5de137dc5ed1d
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      1754 |       r.ok,
+      1755 |       `the student's download failed. Messages: ${r.messages.join(" | ")}. Failed requests: ${r.bad.join(" | ")}`,
+    > 1756 |     ).toBe(true);
+           |       ^
+      1757 |   } finally {
+      1758 |     await context.close();
+      1759 |   }
+        at /home/haider/Documents/risetech/peered-tests/tests/resources.spec.ts:1756:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-13-a-student-can-see-and-download-a-resource-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/resources-RES-13-a-student-can-see-and-download-a-resource-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/resources-RES-13-a-student-can-see-and-download-a-resource-chromium/test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/resources-RES-13-a-student-can-see-and-download-a-resource-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/resources-RES-13-a-student-can-see-and-download-a-resource-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/resources-RES-13-a-student-can-see-and-download-a-resource-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12 failed
+    [chromium] › tests/resources.spec.ts:851:5 › RES-04b (extra test): renaming a folder to a name that already exists is refused 
+    [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08a: WRONG_text_renamed_to_pdf.pdf 
+    [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08b: WRONG_text_renamed_to_png.png 
+    [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08c: WRONG_unsupported_type.xyz 
+    [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08d: WRONG_unsupported_type.exe 
+    [chromium] › tests/resources.spec.ts:1127:9 › RES-08: wrong files are rejected with a message › RES-08e: WRONG_empty_file.pdf 
+    [chromium] › tests/resources.spec.ts:1154:7 › RES-08: wrong files are rejected with a message › RES-08f: a very large file 
+    [chromium] › tests/resources.spec.ts:1265:5 › RES-08g (extra test): a .exe file dragged onto the upload area is rejected 
+    [chromium] › tests/resources.spec.ts:1379:5 › RES-10: a downloaded file is identical to the original 
+    [chromium] › tests/resources.spec.ts:1393:5 › RES-10b (extra test): download one file of each type 
+    [chromium] › tests/resources.spec.ts:1450:5 › RES-11b (extra test): the Edit form shows the file name, not a web link; tag chips have a proper name 
+    [chromium] › tests/resources.spec.ts:1723:5 › RES-13: a student can see and download a resource 
+  43 passed (39.7m)
+
+To open last HTML report run:
+[36m[39m
+[36m  npx playwright show-report[39m
+[36m[39m

@@ -1,0 +1,186 @@
+
+Running 7 tests using 1 worker
+
+  ✓  1 [setup] › tests/auth.setup.ts:10:6 › log in as faculty and save the session (4.4s)
+OVERVIEW | baseline: {"courses":23,"archived":11}
+  ✓  2 [chromium] › tests/overview.spec.ts:406:5 › OVW-00: clean start (delete any leftover qa_course, create a fresh one) (16.0s)
+OVERVIEW | OVW-01 tiles: {"Students":0,"Faculty":1,"Student Questions":0,"Bank Questions":0,"Total Questions":0,"Tags":0,"Teams":0,"Contests":0,"Help Requests":0}
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✘  3 [chromium] › tests/overview.spec.ts:423:5 › OVW-01: overview tiles show the right numbers; edit icons and View links work (1.1m)
+OVERVIEW | OVW-07 | message: ["Fetched Student Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (3)","No Enrollable Students Found","Download All","Enroll Students"]
+OVERVIEW | OVW-07 | enroll_students_CORRECT.xlsx | students 0 -> 0 | message: Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (3) | No Enrollable Students Found | Download All | Enroll Students
+NOTE | OVW-07: the sample file was refused (Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (3) | No Enrollable Students Found | Download All | Enroll Students); used a file built at run time from 3 students listed in Manage Students instead.
+OVERVIEW | OVW-07-built | message: ["Fetched Student Eligibility Data!","Enrollable (3)","Not Applicable (0)","Invalid (0)","Name\tUsername\tEmail","Test One\ttest_1\ttest_1@gmail.com","Test Two\ttest_2\ttest_2@gmail.com","Test Three\ttest_3\ttest_3@gmail.com","Download All","Download Enrollable"]
+OVERVIEW | OVW-07-built-confirm | message: ["Enrollment Successful!","3 Students","3","Test Two","test_2","test_2@gmail.com","Test Three","test_3","test_3@gmail.com","Test One"]
+OVERVIEW | OVW-07-built | built_students.xlsx | students 0 -> 3 | message: Fetched Student Eligibility Data! | Enrollable (3) | Not Applicable (0) | Invalid (0) | Name	Username	Email | Test One	test_1	test_1@gmail.com | Test Two	test_2	test_2@gmail.com | Test Three	test_3	test_3@gmail.com | Download All | Download Enrollable || after pressing "Enroll Students": Enrollment Successful! | 3 Students | 3 | Test Two | test_2 | test_2@gmail.com | Test Three | test_3 | test_3@gmail.com | Test One
+OVERVIEW | reset-students | message: ["Users Updated Successfully","0 Students"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  4 [chromium] › tests/overview.spec.ts:603:5 › OVW-07: Bulk Enroll with a correct XLSX enrols the students (1.5m)
+OVERVIEW | OVW-08a-csv | message: ["Fetched Student Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (3)","No Enrollable Students Found","Download All","Enroll Students"]
+OVERVIEW | OVW-08a-csv | enroll_students_CORRECT.csv | students 0 -> 0 | message: Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (3) | No Enrollable Students Found | Download All | Enroll Students
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+OVERVIEW | OVW-08a-xls | message: ["Fetched Student Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (3)","No Enrollable Students Found","Download All","Enroll Students"]
+OVERVIEW | OVW-08a-xls | enroll_students_CORRECT.xls | students 0 -> 0 | message: Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (3) | No Enrollable Students Found | Download All | Enroll Students
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+OVERVIEW | OVW-08b-no-email-column | message: ["Missing Required Column: Email Or Emails"]
+OVERVIEW | OVW-08b-no-email-column | enroll_WRONG_no_email_column.xlsx | students 0 -> 0 | message: Missing Required Column: Email Or Emails
+OVERVIEW | OVW-08b-headers-only | message: ["No Data Found In The File."]
+OVERVIEW | OVW-08b-headers-only | enroll_WRONG_headers_only.xlsx | students 0 -> 0 | message: No Data Found In The File.
+OVERVIEW | OVW-08b-unknown-emails | message: ["Fetched Student Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (3)","No Enrollable Students Found","Download All","Enroll Students"]
+OVERVIEW | OVW-08b-unknown-emails | enroll_WRONG_unknown_emails.xlsx | students 0 -> 0 | message: Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (3) | No Enrollable Students Found | Download All | Enroll Students
+OVERVIEW | OVW-08b-empty | message: ["No Data Found In The File."]
+OVERVIEW | OVW-08b-empty | enroll_WRONG_empty.xlsx | students 0 -> 0 | message: No Data Found In The File.
+OVERVIEW | OVW-08b-over-10MB | message: ["Error Reading File. Please Check Formatting."]
+OVERVIEW | OVW-08b-over-10MB | enroll_WRONG_over_10MB.xlsx | students 0 -> 0 | message: Error Reading File. Please Check Formatting.
+OVERVIEW | OVW-08b-wrong-type | message: ["Invalid File Type."]
+OVERVIEW | OVW-08b-wrong-type | test-wrong-type.txt | students 0 -> 0 | message: Invalid File Type.
+OVERVIEW | OVW-08c-mixed | message: ["Fetched Student Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (4)","No Enrollable Students Found","Download All","Enroll Students"]
+OVERVIEW | OVW-08c-mixed | enroll_WRONG_mixed_real_and_unknown.xlsx | students 0 -> 0 | message: Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (4) | No Enrollable Students Found | Download All | Enroll Students
+NOTE | OVW-08 enroll_WRONG_mixed_real_and_unknown.xlsx: students 0 -> 0 (nothing saved); message: Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (4) | No Enrollable Students Found | Download All | Enroll Students
+OVERVIEW | OVW-08c-bad-and-duplicate | message: ["Fetched Student Eligibility Data!","Some Duplicate Emails Were Removed.","Ignored 1 Invalid Email(S).","Enrollable (0)","Not Applicable (0)","Invalid (1)","No Enrollable Students Found","Download All","Enroll Students"]
+OVERVIEW | OVW-08c-bad-and-duplicate | enroll_WRONG_bad_and_duplicate_emails.xlsx | students 0 -> 0 | message: Fetched Student Eligibility Data! | Some Duplicate Emails Were Removed. | Ignored 1 Invalid Email(S). | Enrollable (0) | Not Applicable (0) | Invalid (1) | No Enrollable Students Found | Download All | Enroll Students
+NOTE | OVW-08 enroll_WRONG_bad_and_duplicate_emails.xlsx: students 0 -> 0 (nothing saved); message: Fetched Student Eligibility Data! | Some Duplicate Emails Were Removed. | Ignored 1 Invalid Email(S). | Enrollable (0) | Not Applicable (0) | Invalid (1) | No Enrollable Students Found | Download All | Enroll Students
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✘  5 [chromium] › tests/overview.spec.ts:631:5 › OVW-08: Bulk Enroll accepts .csv and .xls, and wrong files give clear errors (4.1m)
+OVERVIEW | downloaded qa_course_Faculty.xlsx
+OVERVIEW | OVW-11 qa_course_Faculty.xlsx: headers ["Name","Email","Role"], 1 data row(s)
+NOTE | OVW-11: the export lists the owner's role as "admin", while the screen shows "HoD".
+OVERVIEW | OVW-11b-correct | message: ["Fetched Faculty Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (2)","No Enrollable Faculty Found","Download All","Enroll Faculty"]
+OVERVIEW | OVW-11b-correct | enroll_faculty_CORRECT.xlsx | faculty 1 -> 1 | message: Fetched Faculty Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (2) | No Enrollable Faculty Found | Download All | Enroll Faculty
+NOTE | OVW-11: the sample faculty file was refused (Fetched Faculty Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (2) | No Enrollable Faculty Found | Download All | Enroll Faculty); used a file built at run time from 2 listed faculty instead.
+OVERVIEW | OVW-11b-built | message: ["Fetched Faculty Eligibility Data!","Enrollable (2)","Not Applicable (0)","Invalid (0)","Name\tEmail","Faculty-1\tfaculty-1@gmail.com","Umar Ahmad\tfaculty_demo@gmail.com","Download All","Download Enrollable","Enroll Faculty"]
+OVERVIEW | OVW-11b-built-confirm | message: ["Enrollment Successful!","3"]
+OVERVIEW | OVW-11b-built | built_faculty.xlsx | faculty 1 -> 3 | message: Fetched Faculty Eligibility Data! | Enrollable (2) | Not Applicable (0) | Invalid (0) | Name	Email | Faculty-1	faculty-1@gmail.com | Umar Ahmad	faculty_demo@gmail.com | Download All | Download Enrollable | Enroll Faculty || after pressing "Enroll Faculty": Enrollment Successful! | 3
+OVERVIEW | reset-faculty | message: ["Users Updated Successfully","1"]
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+OVERVIEW | OVW-11c-no-email-column | message: ["Missing Required Column: Email Or Emails"]
+OVERVIEW | OVW-11c-no-email-column | enroll_faculty_WRONG_no_email_column.xlsx | faculty 1 -> 1 | message: Missing Required Column: Email Or Emails
+OVERVIEW | OVW-11c-unknown-emails | message: ["Fetched Faculty Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (2)","No Enrollable Faculty Found","Download All","Enroll Faculty"]
+OVERVIEW | OVW-11c-unknown-emails | enroll_faculty_WRONG_unknown_emails.xlsx | faculty 1 -> 1 | message: Fetched Faculty Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (2) | No Enrollable Faculty Found | Download All | Enroll Faculty
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  6 [chromium] › tests/overview.spec.ts:750:5 › OVW-11: Faculty export and bulk enrol behave like the students' ones (2.5m)
+CLEANUP | deleted "qa_course"
+OVERVIEW | after clean-up: {"courses":23,"archived":11}
+  ✓  7 [chromium] › tests/overview.spec.ts:1086:5 › OVW-99: delete qa_course, then the course numbers are back to the start (14.8s)
+
+
+  1) [chromium] › tests/overview.spec.ts:423:5 › OVW-01: overview tiles show the right numbers; edit icons and View links work 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('body')
+    Timeout: 30000ms
+    Expected pattern: /No Questions Found!/
+    Received string:  "
+        PeerEdDashboardCoursesMy BanksReview QuestionsOSCEDr. AsadQqa_courseActiveStudent Activity: EnabledJoin Code:HT3QW9CKKN Watch Guide0 Students0 QuestionsManage MembersOverviewResourcesQuestion BankStudent QuestionsContestsTeamsLeaderboardHelp RequestsStudent Questions ​​ExportNo questions found!Powered by RISETech  |  © 2026 All rights reserved.·····
+    Private BankManage private question bankDepartmental BankAccess departmental bank"
+
+    Call log:
+      - Expect "toContainText" locator('body') with timeout 30000ms
+      - waiting for locator('body')
+        3 × locator resolved to <body>…</body>
+          - unexpected value "
+        PeerEdDashboardCoursesMy BanksReview QuestionsOSCEDr. AsadQqa_courseActiveStudent Activity: EnabledJoin Code:HT3QW9CKKN Watch Guide0 Students0 QuestionsManage MembersOverviewResourcesQuestion BankStudent QuestionsContestsTeamsLeaderboardHelp RequestsCourse Overview Edit DescriptionPost Hoc AnalysisStudents0Faculty1Student Questions0ViewBank Questions0ViewTotal Questions0Tags0Teams0ViewContests0ViewHelp Requests0ViewPowered by RISETech  |  © 2026 All rights reserved.
+    
+      
+    
+    Private BankManage private question bankDepartmental BankAccess departmental bank"
+        - locator resolved to <body>…</body>
+        - unexpected value "
+        PeerEdDashboardCoursesMy BanksReview QuestionsOSCEDr. AsadQqa_courseActiveStudent Activity: EnabledJoin Code:HT3QW9CKKN Watch Guide0 Students0 QuestionsManage MembersOverviewResourcesQuestion BankStudent QuestionsContestsTeamsLeaderboardHelp RequestsStudent Questions ​​ExportQuestionRatingNameUsernameCreatedActionsRows per page:100–0 of 0Powered by RISETech  |  © 2026 All rights reserved.
+    
+      
+    
+    Private BankManage private question bankDepartmental BankAccess departmental bank"
+        59 × locator resolved to <body>…</body>
+           - unexpected value "
+        PeerEdDashboardCoursesMy BanksReview QuestionsOSCEDr. AsadQqa_courseActiveStudent Activity: EnabledJoin Code:HT3QW9CKKN Watch Guide0 Students0 QuestionsManage MembersOverviewResourcesQuestion BankStudent QuestionsContestsTeamsLeaderboardHelp RequestsStudent Questions ​​ExportNo questions found!Powered by RISETech  |  © 2026 All rights reserved.
+    
+      
+    
+    Private BankManage private question bankDepartmental BankAccess departmental bank"
+
+
+      465 |         .click();
+      466 |       // The tab content loads slowly (the first run timed out after 10 s with only the tab bar drawn).
+    > 467 |       await expect(page.locator("body")).toContainText(expected, { timeout: 30_000 });
+          |                                          ^
+      468 |       await expect(page.getByText("Course Overview")).toHaveCount(0);
+      469 |       console.log(`OVERVIEW | OVW-01 View on "${label}" opened a page with ${expected}`);
+      470 |       await dismissGuides(page);
+        at /home/haider/Documents/risetech/peered-tests/tests/overview.spec.ts:467:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/overview-OVW-01-overview-t-0ab17-t-icons-and-View-links-work-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/overview-OVW-01-overview-t-0ab17-t-icons-and-View-links-work-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/overview-OVW-01-overview-t-0ab17-t-icons-and-View-links-work-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overview-OVW-01-overview-t-0ab17-t-icons-and-View-links-work-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overview-OVW-01-overview-t-0ab17-t-icons-and-View-links-work-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/overview.spec.ts:631:5 › OVW-08: Bulk Enroll accepts .csv and .xls, and wrong files give clear errors 
+
+    Error: enroll_students_CORRECT.csv: no students were enrolled
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      637 |       const r = await bulkEnroll(page, "students", sample(name), id);
+      638 |       expect.soft(r.message, `${name}: no message`).not.toBe("");
+    > 639 |       expect.soft(r.after, `${name}: no students were enrolled`).toBeGreaterThan(r.before);
+          |                                                                  ^
+      640 |       await resetCourse(page);
+      641 |     }
+      642 |
+        at /home/haider/Documents/risetech/peered-tests/tests/overview.spec.ts:639:66
+
+    Error: enroll_students_CORRECT.xls: no students were enrolled
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      637 |       const r = await bulkEnroll(page, "students", sample(name), id);
+      638 |       expect.soft(r.message, `${name}: no message`).not.toBe("");
+    > 639 |       expect.soft(r.after, `${name}: no students were enrolled`).toBeGreaterThan(r.before);
+          |                                                                  ^
+      640 |       await resetCourse(page);
+      641 |     }
+      642 |
+        at /home/haider/Documents/risetech/peered-tests/tests/overview.spec.ts:639:66
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/overview-OVW-08-Bulk-Enrol-c2d39-ong-files-give-clear-errors-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/overview-OVW-08-Bulk-Enrol-c2d39-ong-files-give-clear-errors-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/overview-OVW-08-Bulk-Enrol-c2d39-ong-files-give-clear-errors-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/overview-OVW-08-Bulk-Enrol-c2d39-ong-files-give-clear-errors-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/overview-OVW-08-Bulk-Enrol-c2d39-ong-files-give-clear-errors-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/overview.spec.ts:423:5 › OVW-01: overview tiles show the right numbers; edit icons and View links work 
+    [chromium] › tests/overview.spec.ts:631:5 › OVW-08: Bulk Enroll accepts .csv and .xls, and wrong files give clear errors 
+  5 passed (10.1m)

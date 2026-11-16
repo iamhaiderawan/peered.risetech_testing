@@ -1,0 +1,47 @@
+
+Running 5 tests using 1 worker
+
+  ✓  1 [setup] › tests/auth.setup.ts:10:6 › log in as faculty and save the session (3.9s)
+OVERVIEW | baseline: {"courses":23,"archived":11}
+  ✓  2 [chromium] › tests/overview.spec.ts:406:5 › OVW-00: clean start (delete any leftover qa_course, create a fresh one) (15.9s)
+OVERVIEW | OVW-01 tiles: {"Students":0,"Faculty":1,"Student Questions":0,"Bank Questions":0,"Total Questions":0,"Tags":0,"Teams":0,"Contests":0,"Help Requests":0}
+OVERVIEW | OVW-01 View on "Student Questions" opened a page with /No Questions Found!/i
+OVERVIEW | OVW-01 View on "Bank Questions" opened a page with /No Questions Found!/i
+OVERVIEW | OVW-01 View on "Teams" opened a page with /Team/
+OVERVIEW | OVW-01 View on "Contests" opened a page with /No Contests Found!/i
+OVERVIEW | OVW-01 View on "Help Requests" opened a page with /No Help Requests Found!/i
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  3 [chromium] › tests/overview.spec.ts:423:5 › OVW-01: overview tiles show the right numbers; edit icons and View links work (1.2m)
+OVERVIEW | OVW-08a-csv | message: ["Fetched Student Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (3)","No Enrollable Students Found","Download All","Enroll Students"]
+OVERVIEW | OVW-08a-csv | enroll_students_CORRECT.csv | students 0 -> 0 | message: Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (3) | No Enrollable Students Found | Download All | Enroll Students
+NOTE | OVW-08 enroll_students_CORRECT.csv: file read, but no one enrolled (Invalid (3)): the sample emails are not on this site.
+OVERVIEW | OVW-08a-xls | message: ["Fetched Student Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (3)","No Enrollable Students Found","Download All","Enroll Students"]
+OVERVIEW | OVW-08a-xls | enroll_students_CORRECT.xls | students 0 -> 0 | message: Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (3) | No Enrollable Students Found | Download All | Enroll Students
+NOTE | OVW-08 enroll_students_CORRECT.xls: file read, but no one enrolled (Invalid (3)): the sample emails are not on this site.
+OVERVIEW | OVW-08b-no-email-column | message: ["Missing Required Column: Email Or Emails"]
+OVERVIEW | OVW-08b-no-email-column | enroll_WRONG_no_email_column.xlsx | students 0 -> 0 | message: Missing Required Column: Email Or Emails
+OVERVIEW | OVW-08b-headers-only | message: ["No Data Found In The File."]
+OVERVIEW | OVW-08b-headers-only | enroll_WRONG_headers_only.xlsx | students 0 -> 0 | message: No Data Found In The File.
+OVERVIEW | OVW-08b-unknown-emails | message: ["Fetched Student Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (3)","No Enrollable Students Found","Download All","Enroll Students"]
+OVERVIEW | OVW-08b-unknown-emails | enroll_WRONG_unknown_emails.xlsx | students 0 -> 0 | message: Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (3) | No Enrollable Students Found | Download All | Enroll Students
+OVERVIEW | OVW-08b-empty | message: ["No Data Found In The File."]
+OVERVIEW | OVW-08b-empty | enroll_WRONG_empty.xlsx | students 0 -> 0 | message: No Data Found In The File.
+OVERVIEW | OVW-08b-over-10MB | message: ["Error Reading File. Please Check Formatting."]
+OVERVIEW | OVW-08b-over-10MB | enroll_WRONG_over_10MB.xlsx | students 0 -> 0 | message: Error Reading File. Please Check Formatting.
+OVERVIEW | OVW-08b-wrong-type | message: ["Invalid File Type."]
+OVERVIEW | OVW-08b-wrong-type | test-wrong-type.txt | students 0 -> 0 | message: Invalid File Type.
+OVERVIEW | OVW-08c-mixed | message: ["Fetched Student Eligibility Data!","Enrollable (0)","Not Applicable (0)","Invalid (4)","No Enrollable Students Found","Download All","Enroll Students"]
+OVERVIEW | OVW-08c-mixed | enroll_WRONG_mixed_real_and_unknown.xlsx | students 0 -> 0 | message: Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (4) | No Enrollable Students Found | Download All | Enroll Students
+NOTE | OVW-08 enroll_WRONG_mixed_real_and_unknown.xlsx: students 0 -> 0 (nothing saved); message: Fetched Student Eligibility Data! | Enrollable (0) | Not Applicable (0) | Invalid (4) | No Enrollable Students Found | Download All | Enroll Students
+OVERVIEW | OVW-08c-bad-and-duplicate | message: ["Fetched Student Eligibility Data!","Some Duplicate Emails Were Removed.","Ignored 1 Invalid Email(S).","Enrollable (0)","Not Applicable (0)","Invalid (1)","No Enrollable Students Found","Download All","Enroll Students"]
+OVERVIEW | OVW-08c-bad-and-duplicate | enroll_WRONG_bad_and_duplicate_emails.xlsx | students 0 -> 0 | message: Fetched Student Eligibility Data! | Some Duplicate Emails Were Removed. | Ignored 1 Invalid Email(S). | Enrollable (0) | Not Applicable (0) | Invalid (1) | No Enrollable Students Found | Download All | Enroll Students
+NOTE | OVW-08 enroll_WRONG_bad_and_duplicate_emails.xlsx: students 0 -> 0 (nothing saved); message: Fetched Student Eligibility Data! | Some Duplicate Emails Were Removed. | Ignored 1 Invalid Email(S). | Enrollable (0) | Not Applicable (0) | Invalid (1) | No Enrollable Students Found | Download All | Enroll Students
+OVERVIEW | course after reset: Active | Student Activity: Enabled | 0 students | 1 faculty
+  ✓  4 [chromium] › tests/overview.spec.ts:632:5 › OVW-08: Bulk Enroll accepts .csv and .xls, and wrong files give clear errors (3.4m)
+CLEANUP | deleted "qa_course"
+OVERVIEW | after clean-up: {"courses":23,"archived":11}
+  ✓  5 [chromium] › tests/overview.spec.ts:1091:5 › OVW-99: delete qa_course, then the course numbers are back to the start (14.3s)
+
+  Slow test file: [chromium] › tests/overview.spec.ts (5.1m)
+  Consider running tests from slow files in parallel. See: https://playwright.dev/docs/test-parallel
+  5 passed (5.2m)
